@@ -3,6 +3,8 @@ import { Box } from "@mui/material";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProgressIndicatorContainer } from "./features/ProgressIndicator/ProgressIndicatorContainer";
 import { GlobalStyle } from "./GlobalStyle";
+import { Surface } from "./features/Surface/Surface";
+import { FormContainer } from "./features/FormContainer/FormContainer";
 
 function App() {
 
@@ -43,8 +45,10 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle/>
-      <Box component="div" sx={{width: "100%", minHeight: "100%", background: "#FFFFFF"}}>
+      <Box component="div" sx={{width: "100%", minHeight: "100%", background: "#FFFFFF", position: "relative"}}>
+        <Surface/>
         <ProgressIndicatorContainer/>
+        <FormContainer/>
       </Box>
       {/* <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>

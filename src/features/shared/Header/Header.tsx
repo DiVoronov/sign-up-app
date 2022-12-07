@@ -1,5 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
+import { StyledHeader } from "./Header.style";
 
 interface IHeaderProps {
   title: string
@@ -8,9 +9,9 @@ interface IHeaderProps {
 export const Header = ( { title }: IHeaderProps ) => {
 
   return (
-    <Box component="h1">
+    <StyledHeader>
       { title }
-    </Box>
+    </StyledHeader>
   );
 };
 

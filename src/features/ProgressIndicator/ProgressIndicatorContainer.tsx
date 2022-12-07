@@ -6,6 +6,7 @@ import { StepCircle } from "../shared/StepCircle/StepSircle";
 import { Line } from "../shared/StepCircle/Line";
 import { ArticleStep } from "../shared/ArticleStep/ArticleStep";
 import { PrevNextButtons } from "../shared/PrevNextButtons/PrevNextButtons";
+import { OnboardingStats } from "./OnboardingStats/OnboardingStats";
 
 export const ProgressIndicatorContainer = () => {
 
@@ -39,6 +40,8 @@ export const ProgressIndicatorContainer = () => {
           <PrevNextButtons title="Next" condition="inactive"/>
         </Box>
       </Box>
+
+      <OnboardingStats/>
     </StyledProgressIndicatorContainer>
   )
 };

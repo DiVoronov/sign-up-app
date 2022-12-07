@@ -1,5 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
+import { StyledArticle } from "./Article.style";
 
 interface IArticleProps {
   title: string
@@ -8,8 +9,8 @@ interface IArticleProps {
 export const Article = ( { title }: IArticleProps ) => {
 
   return (
-    <Box component="h3">
+    <StyledArticle>
       { title }
-    </Box>
+    </StyledArticle>
   );
 };
