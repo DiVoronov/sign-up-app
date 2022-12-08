@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box } from "@mui/material";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProgressIndicatorContainer } from "./features/ProgressIndicator/ProgressIndicatorContainer";
 import { GlobalStyle } from "./GlobalStyle";
 import { Surface } from "./features/Surface/Surface";
 import { FormContainer } from "./features/FormContainer/FormContainer";
+import { useGetShopifyQuery, useGetGoogleQuery, usePostRegisterMutation } from "./app/api/signUp.api";
 
 function App() {
 
@@ -15,8 +16,8 @@ function App() {
   //             name: "NAME",
   //             email: "EMAIL",
   //             password: "PASSWORD",
-  //             shop_token: "SHOP",
-  //             google_token: "GOOGLE",
+  //             shop_token: "b0dd6c4e14303eb42358e27bdf9d264e",
+  //             google_token: "1d23dd6c4e14302134b42358e27bdf2345264e",
   //         }
   //     ),
   //     headers: {
@@ -26,21 +27,31 @@ function App() {
   //     .then(res=>res.json())
   //     .then(json=>console.log(json))
 
+  const bodyPost = {
+    name: "name	string",
+    email: "email	string",
+    password: "password	string",
+    shop_token: "b0dd6c4e14303eb42358e27bdf9d264e",
+    google_token: "1d23dd6c4e14302134b42358e27bdf2345264e",
+  }
 
-  //     fetch('https://jsonplaceholder.typicode.com/posts', {
-  //       method: 'POST',
-  //       body: JSON.stringify({
-  //         title: 'foo',
-  //         body: 'bar',
-  //         userId: 1,
-  //         ggg: 332,
-  //       }),
-  //       headers: {
-  //         'Content-type': 'application/json; charset=UTF-8',
-  //       },
-  //     })
-  //       .then((response) => response.json())
-  //       .then((json) => console.log(json));
+  const postString = "https://vast-basin-98801.herokuapp.com/register?name=NAME&email=EMAIL&password=PASSWORD&shop_token=b0dd6c4e14303eb42358e27bdf9d264e&google_token=1d23dd6c4e14302134b42358e27bdf2345264e"
+
+  const { data: dataGoogle, error: errorGoogle, isLoading: isLoadingGoogle } = useGetGoogleQuery();
+  const { data: dataShopify, error: errorShopify, isLoading: isLoadingShopify } = useGetShopifyQuery("Guilty");
+  const [ updatePost, result ] = usePostRegisterMutation();
+
+  useEffect( () => { 
+
+    console.log(dataGoogle);
+    console.log(dataShopify);
+    console.log(
+      bodyPost,
+      result
+      );
+  }, [dataGoogle, dataShopify, updatePost]);
+
+  
 
   return (
     <div className="App">

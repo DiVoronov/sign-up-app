@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box } from "@mui/material";
+import { Box, FormControl } from "@mui/material";
 import { StyledFormFields } from "./FormFields.style";
 import { Article } from "../../shared/Article/Article";
 import { Input } from "../../shared/Input/Input";
@@ -17,6 +17,10 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 export const FormFields = () => {
 
+  const [ valueName, setValueName ] = useState("");
+  const [ valueEmail, setValueEmail ] = useState("");
+  const [ valuePassword, setValuePassword ] = useState("");
+
   const [isVisiblePassword, setIsVisiblePassword] = useState("password");
 
   const handleClickShowPassword = () => {
@@ -27,24 +31,43 @@ export const FormFields = () => {
     event.preventDefault();
   };
 
+  function handleValueName (event: React.FormEvent<HTMLDivElement>) {
+    // console.log(event.target.dispatchEvent(event));
+    
+    // setValueName(event.target)
+  };
+
   return (
     <StyledFormFields>
       <Box className="InputField">
         <Article title="Email"/>
-        <Input type="email" placeholder="megachad@trychad.com"/>
+        <Input type="email" placeholder="megachad@trychad.com" 
+        // value={valueName} 
+        />
       </Box>
       <Box className="InputField">
         <Article title="Your name"/>
-        <Input type="text" placeholder="Mega Chad"/>
+
+        <FormControl onChange={ (event) => handleValueName(event) }>
+          <Input type="text" placeholder="Mega Chad" 
+          // value={valueEmail}
+          />
+        </FormControl>
+        
       </Box>
       <Box className="InputField">
         <Article title="Password"/>
         <Box id="forEye">
-          <Input type={isVisiblePassword} placeholder="Enter password"/>
+
+          <FormControl onChange={ () => {} }>
+            <Input type={isVisiblePassword} placeholder="Enter password" 
+            // value={valuePassword}
+            />
+          </FormControl>
 
           <InputAdornment position="end" id="eye-icon">
             <IconButton
-              aria-label="toggle password visibility"
+              aria-label="toggle password visibility" 
               onClick={handleClickShowPassword}
               onMouseDown={handleMouseDownPassword}
               edge="end"

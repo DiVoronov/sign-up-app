@@ -1,10 +1,21 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import counterReducer from "../features/counter/counterSlice";
+import { signUpApi } from "./api/signUp.api";
+import { bodyPostReducer } from "./Slices/bodyPostSlice";
+import { connectEmailReducer } from "./Slices/connectEmailSlice";
+import { connectShopifyReducer } from "./Slices/connectShopifySlice";
+import { isRegistrationDoneReducer } from "./Slices/isRegistrationDoneSlice";
+import { welcomeCreateAccountReducer } from "./Slices/welcomeCreateAccountSlice";
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    welcomeCreateAccount: welcomeCreateAccountReducer,
+    connectShopify: connectShopifyReducer,
+    connectEmail: connectEmailReducer,
+    isRegistrationDone: isRegistrationDoneReducer,
+    bodyPost: bodyPostReducer,
+    [signUpApi.reducerPath]: signUpApi.reducer,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(signUpApi.middleware),
 });
 
 export type AppDispatch = typeof store.dispatch;

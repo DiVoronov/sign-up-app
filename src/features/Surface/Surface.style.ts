@@ -9,8 +9,6 @@ left: 568px;
 top: 0px;
 & > svg {
   position: absolute;
-  left: -2.75%;
-  right: -1.84%;
   top: 0%;
   bottom: -1.33%;
 }
