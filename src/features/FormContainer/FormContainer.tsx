@@ -3,26 +3,54 @@ import { Box } from "@mui/material";
 import { StyledFormContainer } from "./FormContainer.style";
 import { Header } from "../shared/Header/Header";
 import { Description } from "../shared/Description/Description";
-
-import { ReactComponent as ChadLogo } from "./ChadLogo.svg";
 import { FormFields } from "./FormFields/FormFields";
+import { ContainerShared } from "../shared/Container/ContainerShared";
+import { ChadLogoHeader } from "../shared/ChadLogoHeader/ChadLogoHeader";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../app/store";
+import { ConnectionProcessShopify } from "./SecondStep/ConnectionProcessShopify";
+import { ShopifyConnected } from "./SecondStep/ShopifyConnected";
+import { ConnectionProcessEmail } from "./ThirdStep/ConnectionProcessEmail";
+import { DoNotUse } from "../shared/DoNotUse/DoNotUse";
+import { SuccessPage } from "./SecondStep/SuccessPage";
 
 export const FormContainer = ( ) => {
 
+  const statusWelcomeCreateAccount = useSelector( (state: RootState) => state.welcomeCreateAccount);
+  const statusIsCreateAccount = useSelector( (state: RootState) => state.isCreateAccountDone);
+  const statusConnectShopify = useSelector( (state: RootState) => state.connectShopify);
+  const statusConnectEmail = useSelector( (state: RootState) => state.connectEmail);
+  const statusIsRegistrationDone = useSelector( (state: RootState) => state.isRegistrationDone);
+
+  
+  const optionsArrayShopify = [
+    { id: 1, value: "Salesforce" },
+    { id: 2, value: "Ecwid" },
+    { id: 3, value: "Other" },
+  ];
+
   return (
     <StyledFormContainer>
-      <Box id="card">
-        <Box id="chad-logo">
-          <ChadLogo/>
-          <Header title="Chad"/>
-        </Box>
-        <Box id="spacer" sx={{height: "24px", order: "2"}}></Box>
-        <Header title="Welcome to Chad"/>
-        <Box id="spacer" sx={{height: "16px", order: "4"}}></Box>
-        <Description color="#4F637D" width="100%">Go live in 10 minutes! Our self-service widget empowers your customers to manage orders and track shipments 24/7 without driving you crazy.</Description>
-        <Box id="spacer" sx={{height: "32px", order: "5"}}></Box>
-        <FormFields/>
-      </Box>
+      {
+        !statusIsCreateAccount 
+        ?
+        <ContainerShared>
+          <ChadLogoHeader/>
+          <Box id="spacer" sx={{height: "24px", order: "2"}}></Box>
+          <Header title="Welcome to Chad"/>
+          <Box id="spacer" sx={{height: "16px", order: "4"}}></Box>
+          <Description color="#4F637D" width="100%">Go live in 10 minutes! Our self-service widget empowers your customers to manage orders and track shipments 24/7 without driving you crazy.</Description>
+          <Box id="spacer" sx={{height: "32px", order: "5"}}></Box>
+          <FormFields/>
+        </ContainerShared>
+        :
+        // <ConnectionProcessShopify/>
+        // <ShopifyConnected/>
+        // <ConnectionProcessEmail/>
+        <SuccessPage title="platform"/>
+        // <DoNotUse title="Shopify" description="Chad Beta is currently only available on Shopify. We’ll send you an email when Chad becomes available on your platform." optionsArray={optionsArrayShopify}/>
+      }
+      
     </StyledFormContainer>
   );
 };

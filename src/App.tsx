@@ -6,6 +6,9 @@ import { GlobalStyle } from "./GlobalStyle";
 import { Surface } from "./features/Surface/Surface";
 import { FormContainer } from "./features/FormContainer/FormContainer";
 import { useGetShopifyQuery, useGetGoogleQuery, usePostRegisterMutation } from "./app/api/signUp.api";
+import { OnboardingComplete } from "./features/OnboardingComplete/OnboardingComplete";
+import { SignWithGoogle } from "./features/SignWithGoogle/SignWithGoogle";
+import { FooterGoogleSign } from "./features/SignWithGoogle/FooterGoogleSign";
 
 function App() {
 
@@ -57,9 +60,12 @@ function App() {
     <div className="App">
       <GlobalStyle/>
       <Box component="div" sx={{width: "100%", minHeight: "100%", background: "#FFFFFF", position: "relative"}}>
-        <Surface/>
+        {/* <Surface/>
         <ProgressIndicatorContainer/>
-        <FormContainer/>
+        <FormContainer/> */}
+        {/* <OnboardingComplete title="ff"/> */}
+        <SignWithGoogle title="ff"/>
+        <FooterGoogleSign/>
       </Box>
       {/* <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>

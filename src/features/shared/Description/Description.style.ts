@@ -6,7 +6,7 @@ width: ${props => props.theme.width};
 font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
-font-size: 14px;
+font-size: ${props => props.theme.size};
 line-height: 21px;
 display: flex;
 align-items: center;

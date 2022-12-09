@@ -6,7 +6,7 @@ height: 18px;
 font-family: 'Inter';
 font-style: normal;
 font-weight: 500;
-font-size: 12px;
+font-size: ${props => props.theme.size};
 line-height: 18px;
 letter-spacing: -0.01em;
 color: #4F637D;

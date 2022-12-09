@@ -13,6 +13,7 @@ import { RootState } from "../../app/store";
 export const ProgressIndicatorContainer = () => {
 
   const statusWelcomeCreateAccount = useSelector( (state: RootState) => state.welcomeCreateAccount);
+  const statusIsCreateAccount = useSelector( (state: RootState) => state.isCreateAccountDone);
   const statusConnectShopify = useSelector( (state: RootState) => state.connectShopify);
   const statusConnectEmail = useSelector( (state: RootState) => state.connectEmail);
   const statusIsRegistrationDone = useSelector( (state: RootState) => state.isRegistrationDone);
@@ -43,7 +44,7 @@ export const ProgressIndicatorContainer = () => {
       ? "activeSecondTick"
       : "inactive";
 
-  const statusFirstLine = () => isAccountCreateString === "activeSecondTick" ? "active" : "inactive";
+  const statusFirstLine = () => statusIsCreateAccount ? "active" : "inactive";
   const statusFirstLineString = statusFirstLine();
 
   const isConnectShopifyString = isCurrentStageDone(statusFirstLineString, statusConnectShopify);

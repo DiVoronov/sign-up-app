@@ -4,12 +4,19 @@ import { StyledArticle } from "./Article.style";
 
 interface IArticleProps {
   title: string
+  size?: string
 };
 
-export const Article = ( { title }: IArticleProps ) => {
+export const Article = ( { title, size }: IArticleProps ) => {
+
+  const currentSize = () => size ? size : "12px";
+
+  const theme = {
+    size: currentSize,
+  }
 
   return (
-    <StyledArticle>
+    <StyledArticle theme={theme}>
       { title }
     </StyledArticle>
   );

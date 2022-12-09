@@ -17,6 +17,7 @@ order: 6;
 align-self: stretch;
 flex-grow: 0;
 border: none;
+cursor: pointer;
 
 font-family: 'Inter';
 font-style: normal;

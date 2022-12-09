@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const StyledHeader = styled.h1`
 width: 400px;
-height: 24px;
 font-family: 'Inter';
 font-style: normal;
 font-weight: 600;
