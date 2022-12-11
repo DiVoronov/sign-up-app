@@ -5,9 +5,9 @@ import { Article } from "../../shared/Article/Article";
 import { Input } from "../../shared/Input/Input";
 import { MainButton } from "../../shared/MainButton/MainButton";
 import { Description } from "../../shared/Description/Description";
-
-import { ReactComponent as IconEye } from "../../shared/Input/IconEye.svg";
-import { ReactComponent as IconEyeOff } from "../../shared/Input/IconEyeOff.svg";
+import { useSelector, useDispatch } from "react-redux";
+import { setCreateAccountStatus } from "../../../app/Slices/isCreateAccountDoneSlice";
+import { RootState } from "../../../app/store";
 
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
@@ -17,9 +17,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 export const FormFields = () => {
 
-  const [ valueName, setValueName ] = useState("");
-  const [ valueEmail, setValueEmail ] = useState("");
-  const [ valuePassword, setValuePassword ] = useState("");
+  const [ isEmpty, setIsEmpty ] = useState(false);
 
   const [isVisiblePassword, setIsVisiblePassword] = useState("password");
 
@@ -37,34 +35,46 @@ export const FormFields = () => {
     // setValueName(event.target)
   };
 
+  // from MainButton
+  const statusWelcomeCreateAccount = useSelector( (state: RootState) => state.welcomeCreateAccount);
+
+  const dispatch = useDispatch();
+  function completeCreationAccount () {
+    setIsEmpty(true);
+    // console.log("!!!");
+    // console.log(
+    //   statusWelcomeCreateAccount.name,
+    //   statusWelcomeCreateAccount.email,
+    //   statusWelcomeCreateAccount.password
+    // );
+    
+    (
+      statusWelcomeCreateAccount.name &&
+      statusWelcomeCreateAccount.email &&
+      statusWelcomeCreateAccount.password
+    ) 
+    &&
+    dispatch(setCreateAccountStatus(true));
+  };
+
   return (
     <StyledFormFields>
       <Box className="InputField">
         <Article title="Email"/>
-        <Input type="email" placeholder="megachad@trychad.com" 
-        // value={valueName} 
-        />
+        <Input type="email" placeholder="megachad@trychad.com" isEmpty={isEmpty} />
       </Box>
       <Box className="InputField">
         <Article title="Your name"/>
 
         <FormControl onChange={ (event) => handleValueName(event) }>
-          <Input type="text" placeholder="Mega Chad" 
-          // value={valueEmail}
-          />
+          <Input type="text" placeholder="Mega Chad" isEmpty={isEmpty} />
         </FormControl>
         
       </Box>
       <Box className="InputField">
         <Article title="Password"/>
+        
         <Box id="forEye">
-
-          <FormControl onChange={ () => {} }>
-            <Input type={isVisiblePassword} placeholder="Enter password" 
-            // value={valuePassword}
-            />
-          </FormControl>
-
           <InputAdornment position="end" id="eye-icon">
             <IconButton
               aria-label="toggle password visibility" 
@@ -75,9 +85,18 @@ export const FormFields = () => {
               {isVisiblePassword === "password" ? <Visibility /> : <VisibilityOff /> }
             </IconButton>
           </InputAdornment>
-        </Box>
+        </Box> 
+
+        <FormControl>
+          <Input type={isVisiblePassword} placeholder="Enter password" isEmpty={isEmpty} />
+          
+        </FormControl>
+
+        
+        
       </Box>
-      <MainButton title="Create account"/>
+      <Box sx={{m: 2}}></Box>
+      <MainButton title="Create account" callback={completeCreationAccount}/>
       <Box component="span" id="bottom-title">
         <Description width="100%" color="#4F637D">Already have an account?</Description>
         <Box component="a">Login</Box>

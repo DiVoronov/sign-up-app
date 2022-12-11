@@ -19,6 +19,7 @@ export const Modal = ( { title }: IModalProps ) => {
       top: "20%", 
       left: "30%",
       margin: "auto",
+      zIndex: 1001,
     }}>
       <ContainerShared>
         <Box 
@@ -26,6 +27,7 @@ export const Modal = ( { title }: IModalProps ) => {
             position: "absolute",
             right: "8%",
             top: "5%",
+            cursor: "pointer",
           }}
         >
           <IconX/>

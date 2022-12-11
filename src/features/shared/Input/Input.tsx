@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Box } from "@mui/material";
-import { StyledInput, styleOfInput } from "./Input.style";
+import { StyledInput } from "./Input.style";
 
 import FormControl from "@mui/material/FormControl";
 import OutlinedInput from "@mui/material/OutlinedInput";
@@ -16,9 +16,10 @@ interface IInputProps {
   placeholder: string
   formHelperText?: string
   value?: string
+  isEmpty?: boolean
 };
 
-export const Input = ( { type, placeholder, value }: IInputProps ) => {
+export const Input = ( { type, placeholder, value, isEmpty }: IInputProps ) => {
   
   const [ valueInput, setValueInput ] = useState("");
 
@@ -35,17 +36,32 @@ export const Input = ( { type, placeholder, value }: IInputProps ) => {
     setValueInput(event.target.value);
   };
 
+  const isEmptyColor = () => ((!isEmpty && valueInput) || (isEmpty && valueInput) || !isEmpty) ? "none" : "1px solid #D24646"
+  const theme = {
+    color: isEmptyColor,
+  };
+
   return (
-    <StyledInput 
-      type={type} 
-      placeholder={placeholder} 
-      value={value} 
-      onChange={handleChange}
-      id="outlined-input"
-      aria-describedby="outlined-input-helper-text"
-    >
-      
-    </StyledInput>
+    <Box sx={{display: "flex", flexDirection: "column-reverse"}}>
+      <StyledInput 
+        type={type} 
+        placeholder={placeholder} 
+        value={value} 
+        onChange={handleChange}
+        id="outlined-input"
+        aria-describedby="outlined-input-helper-text"
+        theme={theme}
+      >
+        
+      </StyledInput>
+      { 
+        ((!isEmpty && valueInput) || (isEmpty && valueInput) || !isEmpty) 
+        ?
+        <></>
+        :
+        <span id="errorMessage">This field cannot be tempty</span>
+      }
+    </Box>
   );
 };
 

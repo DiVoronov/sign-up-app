@@ -26,9 +26,9 @@ flex-grow: 0;
   flex-grow: 0;
   & #eye-icon {
     position: relative;
-    right: -86%;
-    position: relative;
-    top: -24px;
+    right: -350px;
+    top: 30px;
+    z-index: 50;
   }
 }
 & #bottom-title {
@@ -56,5 +56,14 @@ flex-grow: 0;
       cursor: pointer;
     }
   }
+}
+& #errorMessage {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+  color: #D24646;
 }
 `;

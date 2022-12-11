@@ -15,7 +15,7 @@ flex: none;
 order: 1;
 align-self: stretch;
 flex-grow: 0;
-border: none;
+border: ${ props => props.theme.color };
 outline: none;
 &:focus {
   border: 1px solid #32ABF2;
@@ -34,41 +34,41 @@ outline: none;
 }
 `;
 
-export const styleOfInput = {
-  display: "flex",
-  flexDirection: "row",
-  alignItems: "center",
-  padding: "10px 10px 10px 17px",
-  gap: "10px",
-  width: "400px",
-  height: "45px",
-  background: "#F8F9FC",
-  borderRradius: "4px",
-  flex: "none",
-  order: "1",
-  alignSelf: "stretch",
-  flexGrow: "0",
-  border: "none",
-  outline: "none",
-  ["&:focus"]: {
-    border: "1px solid #32ABF2",
-  },
-  ["&:hover"]: {
-    border: "none !important",
-    outline: "none",
-  },
-  ["&::placeholder"]: {
-    fontFamily: "Inter",
-    fontStyle: "normal",
-    fontWeight: "400",
-    fontSize: "16px",
-    lineHeight: "24px",
-    letterSpacing: "-0.01em",
-    color: "#C3CAD5",
-    flex: "none",
-    order: 0,
-    flexGrow: 1,
-  }
-}
+// export const styleOfInput = {
+//   display: "flex",
+//   flexDirection: "row",
+//   alignItems: "center",
+//   padding: "10px 10px 10px 17px",
+//   gap: "10px",
+//   width: "400px",
+//   height: "45px",
+//   background: "#F8F9FC",
+//   borderRradius: "4px",
+//   flex: "none",
+//   order: "1",
+//   alignSelf: "stretch",
+//   flexGrow: "0",
+//   border: "none",
+//   outline: "none",
+//   ["&:focus"]: {
+//     border: `${ props => `1px solid ${props.theme.color}` }`,
+//   },
+//   ["&:hover"]: {
+//     border: "none !important",
+//     outline: "none",
+//   },
+//   ["&::placeholder"]: {
+//     fontFamily: "Inter",
+//     fontStyle: "normal",
+//     fontWeight: "400",
+//     fontSize: "16px",
+//     lineHeight: "24px",
+//     letterSpacing: "-0.01em",
+//     color: "#C3CAD5",
+//     flex: "none",
+//     order: 0,
+//     flexGrow: 1,
+//   }
+// }
 
 // outline if active : #32ABF2

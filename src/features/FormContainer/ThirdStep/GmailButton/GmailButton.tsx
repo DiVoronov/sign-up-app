@@ -4,14 +4,18 @@ import { StyledGmailButton } from "./GmailButton.style";
 
 import { ReactComponent as GmailIcon } from "./GmailIcon.svg";
 
-export const GmailButton = () => {
+interface IGmailButtonProps {
+  callback: () => void
+};
+
+export const GmailButton = ( { callback }: IGmailButtonProps ) => {
 
   return (
-    <StyledGmailButton>
+    <StyledGmailButton onClick={callback}>
       <Box>
         <GmailIcon/>
       </Box>
-      <Box component="span">Connect Gmail account</Box>
+      <Box component="span" sx={{width: "max-content"}}>Connect Gmail account</Box>
     </StyledGmailButton>
   );
 };

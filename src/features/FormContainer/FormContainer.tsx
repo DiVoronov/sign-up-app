@@ -13,16 +13,20 @@ import { ShopifyConnected } from "./SecondStep/ShopifyConnected";
 import { ConnectionProcessEmail } from "./ThirdStep/ConnectionProcessEmail";
 import { DoNotUse } from "../shared/DoNotUse/DoNotUse";
 import { SuccessPage } from "./SecondStep/SuccessPage";
+import { OnboardingComplete } from "../OnboardingComplete/OnboardingComplete";
+import { Modal } from "../OnboardingComplete/Modal";
 
 export const FormContainer = ( ) => {
 
   const statusWelcomeCreateAccount = useSelector( (state: RootState) => state.welcomeCreateAccount);
   const statusIsCreateAccount = useSelector( (state: RootState) => state.isCreateAccountDone);
   const statusConnectShopify = useSelector( (state: RootState) => state.connectShopify);
+  const statusConnectShopifyStore = useSelector( (state: RootState) => state.isConnectShopifyStore);
   const statusConnectEmail = useSelector( (state: RootState) => state.connectEmail);
   const statusIsRegistrationDone = useSelector( (state: RootState) => state.isRegistrationDone);
 
   
+
   const optionsArrayShopify = [
     { id: 1, value: "Salesforce" },
     { id: 2, value: "Ecwid" },
@@ -32,7 +36,7 @@ export const FormContainer = ( ) => {
   return (
     <StyledFormContainer>
       {
-        !statusIsCreateAccount 
+        !statusIsCreateAccount
         ?
         <ContainerShared>
           <ChadLogoHeader/>
@@ -44,10 +48,29 @@ export const FormContainer = ( ) => {
           <FormFields/>
         </ContainerShared>
         :
-        // <ConnectionProcessShopify/>
+        !statusConnectShopify 
+        ?
+        <ConnectionProcessShopify/>
+        :
+        !statusConnectShopifyStore
+        ?
+        <ShopifyConnected/>
+        :
+        !statusConnectEmail
+        ?
+        <ConnectionProcessEmail/>
+        :
+        !statusIsRegistrationDone
+        ?
+        <SuccessPage title="platform"/>
+        :
+        <OnboardingComplete title="ffff"/>
+
+        
+
         // <ShopifyConnected/>
         // <ConnectionProcessEmail/>
-        <SuccessPage title="platform"/>
+        // <SuccessPage title="platform"/>
         // <DoNotUse title="Shopify" description="Chad Beta is currently only available on Shopify. We’ll send you an email when Chad becomes available on your platform." optionsArray={optionsArrayShopify}/>
       }
       

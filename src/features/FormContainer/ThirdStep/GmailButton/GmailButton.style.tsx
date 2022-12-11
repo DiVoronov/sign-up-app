@@ -6,7 +6,7 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-padding: 2px 96px 1px 1px;
+padding: 1px 96px 2px 1px;
 gap: 96px;
 margin-top: 24px;
 background: #5383EC;

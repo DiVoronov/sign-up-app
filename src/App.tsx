@@ -12,6 +12,8 @@ import { FooterGoogleSign } from "./features/SignWithGoogle/FooterGoogleSign";
 import { ConnectGoogleFirst } from "./features/SignWithGoogle/ConnectGoogleFirst";
 import { ConnectGoogleSecond } from "./features/SignWithGoogle/ConnectGoogleSecond";
 import { LoadingGoogle } from "./features/SignWithGoogle/LoadingGoogle";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "./app/store";
 
 function App() {
 
@@ -57,24 +59,29 @@ function App() {
       );
   }, [dataGoogle, dataShopify, updatePost]);
 
-  
+  const statusIsRegistrationDone = useSelector( (state: RootState) => state.isRegistrationDone);
 
   return (
     <div className="App">
       <GlobalStyle/>
-      <Box component="div" sx={{width: "100%", minHeight: "100%", background: "#FFFFFF", position: "relative"}}>
-        <Surface/>
-        <ProgressIndicatorContainer/>
-        <FormContainer/>
-        {/* <OnboardingComplete title="ff"/> */}
 
-        {/* <SignWithGoogle title="ff" children={<ConnectGoogleFirst title="ggg"/>}/> */}
-        {/* <SignWithGoogle title="ff" children={<ConnectGoogleSecond title="gigachad@gmail.com" color="#32ABF2"/>}/> */}
-        {/* <FooterGoogleSign/> */}
+      { 
+        !statusIsRegistrationDone
+        ?
+        <Box component="div" sx={{width: "100%", minHeight: "100%", background: "#FFFFFF", position: "relative"}}>
+          <Surface/>
+          <ProgressIndicatorContainer/>
+          <FormContainer/>
+          {/* <OnboardingComplete title="ff"/> */}
+          {/* <SignWithGoogle title="ff" children={<ConnectGoogleFirst title="ggg"/>}/> */}
+          {/* <SignWithGoogle title="ff" children={<ConnectGoogleSecond title="gigachad@gmail.com" color="#32ABF2"/>}/> */}
+          {/* <FooterGoogleSign/> */}
+          {/* <LoadingGoogle/> */}
+        </Box>
+        :
+        <OnboardingComplete title="ffff"/>
+      }
 
-        {/* <LoadingGoogle/> */}
-
-      </Box>
       {/* <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="*" element={<></>} />

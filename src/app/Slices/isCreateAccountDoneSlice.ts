@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const isCreateAccountDoneSlice = createSlice({
   name: "isCreateAccountDone",
-  initialState: true,
+  initialState: false,
   reducers: {
     setCreateAccountStatus (state, action) {
       console.log(state);

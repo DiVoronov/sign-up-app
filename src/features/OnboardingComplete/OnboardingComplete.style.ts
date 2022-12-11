@@ -2,10 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 export const StyledOnboardingComplete = styled.div`
-position: relative;
+position: absolute;
 width: 1443px;
 height: 900px;
 background: #F9F9FA;
+z-index: 1000;
 
 & img {
   position: absolute;
@@ -29,6 +30,8 @@ background: #F9F9FA;
   line-height: 28px;
   display: flex;
   align-items: center;
-  color: #FFFFFF;
+  color: #576168;
+  background: #0f2330;
+  padding-left: 1rem;
 }
 `;

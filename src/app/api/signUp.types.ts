@@ -18,6 +18,29 @@ export interface IResponseShopifyFailure {
   message: string;
 };
 
+export interface IResponseShopify {
+  shop_logo_url?: string;
+  shop_name?: string;
+  token?: string;
+  status?: string;
+  message?: string;
+};
+export interface IResponseQueryShopify {
+  status: string;
+  endpointName: string;
+  requestId: string;
+  originalArgs: string;
+  startedTimeStamp: number;
+  data: IResponseShopifySuccess;
+  fulfilledTimeStamp: number;
+  isUninitialized: boolean;
+  isLoading: boolean;
+  isSuccess: boolean;
+  isError: boolean;
+  currentData: IResponseShopifySuccess;
+  isFetching: boolean;
+}
+
 // response POST
 
 export interface IResponsePOST {
