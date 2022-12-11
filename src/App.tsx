@@ -9,6 +9,9 @@ import { useGetShopifyQuery, useGetGoogleQuery, usePostRegisterMutation } from "
 import { OnboardingComplete } from "./features/OnboardingComplete/OnboardingComplete";
 import { SignWithGoogle } from "./features/SignWithGoogle/SignWithGoogle";
 import { FooterGoogleSign } from "./features/SignWithGoogle/FooterGoogleSign";
+import { ConnectGoogleFirst } from "./features/SignWithGoogle/ConnectGoogleFirst";
+import { ConnectGoogleSecond } from "./features/SignWithGoogle/ConnectGoogleSecond";
+import { LoadingGoogle } from "./features/SignWithGoogle/LoadingGoogle";
 
 function App() {
 
@@ -60,12 +63,17 @@ function App() {
     <div className="App">
       <GlobalStyle/>
       <Box component="div" sx={{width: "100%", minHeight: "100%", background: "#FFFFFF", position: "relative"}}>
-        {/* <Surface/>
+        <Surface/>
         <ProgressIndicatorContainer/>
-        <FormContainer/> */}
+        <FormContainer/>
         {/* <OnboardingComplete title="ff"/> */}
-        <SignWithGoogle title="ff"/>
-        <FooterGoogleSign/>
+
+        {/* <SignWithGoogle title="ff" children={<ConnectGoogleFirst title="ggg"/>}/> */}
+        {/* <SignWithGoogle title="ff" children={<ConnectGoogleSecond title="gigachad@gmail.com" color="#32ABF2"/>}/> */}
+        {/* <FooterGoogleSign/> */}
+
+        {/* <LoadingGoogle/> */}
+
       </Box>
       {/* <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>

@@ -8,34 +8,24 @@ import { GoogleEmailItem } from "../shared/GoogleEmailItem/GoogleEmailItem";
 
 interface ISignWithGoogleProps {
   title: string
+  children: React.ReactNode
 };
 
-const BottomBorderLine = () => {
 
-  return (
-    <Box sx={{borderBottom: "1px solid #E3E5E8", width: "90%"}}>
-      
-    </Box>
-  );
-};
-
-export const SignWithGoogle = ( { title }: ISignWithGoogleProps ) => {
+export const SignWithGoogle = ( { title, children }: ISignWithGoogleProps ) => {
 
   return (
     <StyledSignWithGoogle>
       <Box sx={{display: "flex", p: 1.5}}>
         <Box sx={{pr: 2}}><SocialIcon/></Box>
-        <Box><Description color="#737B8C" width="100%" size="13px">Sign in with Google</Description></Box>
+        <Box><Description color="#737B8C" width="100%" size="13px" font="Product Sans">Sign in with Google</Description></Box>
       </Box>
       <Box id="first-line"></Box>
 
-      <GoogleEmailItem title="Giga Chad" color="#32ABF2">gigachad@gmail.com</GoogleEmailItem>
-      <BottomBorderLine/>
-      <GoogleEmailItem title="Mini Chad" color="#EB920B">minichad@gmail.com</GoogleEmailItem>
-      <BottomBorderLine/>
-      <GoogleEmailItem title="Ultra Chad" color="#65BD47">ultrachad@gmail.com</GoogleEmailItem>
-      <BottomBorderLine/>
-
+      <Box sx={{display: "flex", justifyContent: "center", alignContent: "center"}}>
+        { children }
+      </Box>
+      
 
     </StyledSignWithGoogle>
   );
