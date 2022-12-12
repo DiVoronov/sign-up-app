@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/sign-up-app/static/css/main.5b17daf4.css",
+    "main.js": "/sign-up-app/static/js/main.7285fad1.js",
+    "static/media/Surface.svg": "/sign-up-app/static/media/Surface.cb6e6510f0af8480ef77ca22db40e0d1.svg",
+    "static/media/OnboardingComplete.svg": "/sign-up-app/static/media/OnboardingComplete.bac3498174deb936acf476471acea550.svg",
+    "static/media/ShopifyAvatar.svg": "/sign-up-app/static/media/ShopifyAvatar.fe3a97c420f2ab8d0363c92fc477f4a1.svg",
+    "static/media/HeaderReady.svg": "/sign-up-app/static/media/HeaderReady.eba7a69ad1008d2864a458cdb2eb5c48.svg",
+    "static/media/Rectangle.svg": "/sign-up-app/static/media/Rectangle.b7f89562a6be1e54b91053b810c582bc.svg",
+    "static/media/ChadLogo.svg": "/sign-up-app/static/media/ChadLogo.ee2fd8cd58993ab024be72ef26452508.svg",
+    "static/media/SocialIcon.svg": "/sign-up-app/static/media/SocialIcon.dcdfec5affe41bd1e9475ca1de8f4964.svg",
+    "static/media/GmailIcon.svg": "/sign-up-app/static/media/GmailIcon.7cbc316b5f1eed83e99545dae783f900.svg",
+    "static/media/UserCircle.svg": "/sign-up-app/static/media/UserCircle.12638c18b573a000f4592beb983fb1d4.svg",
+    "static/media/Loading.svg": "/sign-up-app/static/media/Loading.2194c79a7b40259799db5ad8983cfe7c.svg",
+    "static/media/GmailLogo.svg": "/sign-up-app/static/media/GmailLogo.8004f578a225205390110f1ef4cd912f.svg",
+    "static/media/IconInfo.svg": "/sign-up-app/static/media/IconInfo.8c2a45e61517385697cd45f8db01a938.svg",
+    "index.html": "/sign-up-app/index.html",
+    "static/media/CircleConditionActiveThird.svg": "/sign-up-app/static/media/CircleConditionActiveThird.5819e0df2b88410567996cb31dee3516.svg",
+    "static/media/IconX.svg": "/sign-up-app/static/media/IconX.00a87e9a672b67474d33de0568a2e515.svg",
+    "static/media/Success.svg": "/sign-up-app/static/media/Success.45a8514b1e7dd366f1d50994a04e6c0b.svg",
+    "static/media/CircleConditionActiveSecondTick.svg": "/sign-up-app/static/media/CircleConditionActiveSecondTick.b6c5212efc98ee073aab1ee8c771a247.svg",
+    "static/media/CircleConditionINActiveTick.svg": "/sign-up-app/static/media/CircleConditionINActiveTick.be1d6fba6ed6cdb6d7e4bc161fe7981b.svg",
+    "static/media/ProgressBar1.svg": "/sign-up-app/static/media/ProgressBar1.2b92ffcbb2f02811ff1e0cb0d9682ba0.svg",
+    "static/media/ProgressBar3.svg": "/sign-up-app/static/media/ProgressBar3.1c33848295d12aca8087b68c4cc62d04.svg",
+    "static/media/TickGreen.svg": "/sign-up-app/static/media/TickGreen.659aaccacfa638cdfa24fc9cf6f7e5d2.svg",
+    "static/media/ProgressBar2.svg": "/sign-up-app/static/media/ProgressBar2.8c0ed7322af917b478d3c543b9b50991.svg",
+    "static/media/Next.svg": "/sign-up-app/static/media/Next.bcd2cd52fffd344f13440ecc67703d83.svg",
+    "static/media/Prev.svg": "/sign-up-app/static/media/Prev.0e48828bfe4757682367268a864f155a.svg",
+    "static/media/VectorTriangle.svg": "/sign-up-app/static/media/VectorTriangle.aa35a59560aaa9713c9a985e9571ed8e.svg",
+    "static/media/CircleConditionActiveFirst.svg": "/sign-up-app/static/media/CircleConditionActiveFirst.3a4796434b3fcfbdbc3f371b8aa52f94.svg",
+    "static/media/CircleConditionINActive.svg": "/sign-up-app/static/media/CircleConditionINActive.f22854fb5aa895b177fc84bf5a4e532f.svg",
+    "static/media/LineActive.svg": "/sign-up-app/static/media/LineActive.fef5decd933f420a2abe1478aef6efa1.svg",
+    "static/media/LineInActive.svg": "/sign-up-app/static/media/LineInActive.9d3b3ae872c0aaf99618437369660cc6.svg",
+    "static/media/CircleActive.svg": "/sign-up-app/static/media/CircleActive.409dc4e168943d53f376fbabffa86063.svg",
+    "static/media/CircleInActive.svg": "/sign-up-app/static/media/CircleInActive.7b2b769669e594a98d9022270431288f.svg",
+    "main.5b17daf4.css.map": "/sign-up-app/static/css/main.5b17daf4.css.map",
+    "main.7285fad1.js.map": "/sign-up-app/static/js/main.7285fad1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5b17daf4.css",
+    "static/js/main.7285fad1.js"
+  ]
+}
