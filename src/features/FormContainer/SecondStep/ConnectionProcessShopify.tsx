@@ -69,7 +69,7 @@ export const ConnectionProcessShopify = () => {
         connecting 
         &&  
         <Box sx={{position: "fixed", width: {xs: "450px", sm: "1440px"}, height: "900px", background: "#FFFFFF", left: "0px", top: "0px"}}>
-          <Box sx={{position: "absolute", width: {xs: "450px", sm: "1440px"}, height: "900px", left: {xs: "100px", sm: "631px"}, top: {xs: "200px", sm: "268px"}}}>
+          <Box sx={{position: "absolute", width: {xs: "450px", sm: "1440px"}, height: "900px", left: {xs: "110px", sm: "631px"}, top: {xs: "200px", sm: "268px"}}}>
             <Description color="#9196A1" width="100%" size="16px">Connecting to Shopify...</Description>
           </Box>
         </Box>

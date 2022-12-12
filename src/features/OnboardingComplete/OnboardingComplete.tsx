@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Box } from "@mui/material";
-import { StyledOnboardingComplete } from "./OnboardingComplete.style";
+import { StyledOnboardingComplete, StyledSharedContainerReady } from "./OnboardingComplete.style";
 
 import { ReactComponent as OnboardingCompleteSVG } from "./svg/OnboardingComplete.svg";
 import { Modal } from "./Modal";
@@ -51,14 +51,14 @@ export const OnboardingComplete = ( { title }: IOnboardingCompleteProps ) => {
   return (
     <StyledOnboardingComplete>
       <Box sx={{display: {xs: "flex", sm: "none"}}}>
-        <ContainerShared>
+        <StyledSharedContainerReady>
           <Box sx={{display: "flex", flexDirection: "column", gap: "8px", textAlign: "center"}}>
             <Box sx={{mb: 1}}><Success/></Box>
             <Article title="You’re ready to go!" size="16px"/>
             <Description color="#4F637D" width="100%" size="14px">Chad doesn’t support mobile browsers. To access your dashboard, login from your laptop or desktop computer.</Description>
             <MainButton title="Done"/>
           </Box>
-        </ContainerShared>
+        </StyledSharedContainerReady>
       </Box>
 
       <Box sx={{display: {xs: "none", sm: "flex"}}}>

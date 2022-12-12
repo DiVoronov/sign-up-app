@@ -36,11 +36,20 @@ z-index: 1000;
 }
 
 @media screen and (max-width: 450px) {
-  position: flex;
-  width: 400px;
+  width: 100%;
   height: 900px;
   background: none;
   z-index: 1000;
   margin: auto;
 }
+`;
+
+export const StyledSharedContainerReady = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 64px 40px;
+width: 100%;
+min-height: 511px;
+flex: none;
 `;
