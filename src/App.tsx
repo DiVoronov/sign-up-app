@@ -14,6 +14,7 @@ import { ConnectGoogleSecond } from "./features/SignWithGoogle/ConnectGoogleSeco
 import { LoadingGoogle } from "./features/SignWithGoogle/LoadingGoogle";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "./app/store";
+import { IdentificationGoogle } from "./features/SignWithGoogle/IdentificationGoogle";
 
 function App() {
 
@@ -61,12 +62,19 @@ function App() {
 
   const statusIsRegistrationDone = useSelector( (state: RootState) => state.isRegistrationDone);
 
+  const statusIdentificationGoogle = useSelector( (state: RootState) => state.identificationGoogle);
+  const statusIdentificationGoogleObject = useSelector( (state: RootState) => state.identificationGoogleObject);
+
   return (
     <div className="App">
       <GlobalStyle/>
 
       { 
-        !statusIsRegistrationDone
+        statusIsRegistrationDone
+        ?
+        <OnboardingComplete title="ffff"/>
+        :
+        !statusIdentificationGoogle
         ?
         <Box component="div" sx={{width: "100%", minHeight: "100%", background: "#FFFFFF", position: "relative"}}>
           <Surface/>
@@ -79,7 +87,9 @@ function App() {
           {/* <LoadingGoogle/> */}
         </Box>
         :
-        <OnboardingComplete title="ffff"/>
+        <IdentificationGoogle/>
+        
+        
       }
 
       {/* <BrowserRouter basename={process.env.PUBLIC_URL}>

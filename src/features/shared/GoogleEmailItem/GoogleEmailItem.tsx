@@ -1,6 +1,9 @@
 import React from "react";
 import { Box } from "@mui/material";
 import { Description } from "../Description/Description";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../../app/store";
+import { setIdentificationGoogleObject } from "../../../app/Slices/identificationGoogleObject";
 
 interface IGoogleEmailItemProps {
   title: string
@@ -10,15 +13,22 @@ interface IGoogleEmailItemProps {
 
 export const GoogleEmailItem = ( { title, children, color }: IGoogleEmailItemProps ) => {
 
+  const dispatch = useDispatch();
+  const useSendGoogleInformation = () => {
+    dispatch(setIdentificationGoogleObject({
+      title, children, color
+    }));
+  };
+
   return (
-    <Box 
+    <Box
       sx={{
         display: "flex",  
         gap: "8px", 
         height: "68px", 
         ["&:hover"]: {border: "1px solid #3674E0", cursor: "pointer"}
       }}
-      onClick={ () => {console.log("SELECTED", children, color);}}
+      onClick={useSendGoogleInformation}
     >
       <Box sx={{mr: 1, display: "flex", flexWrap: "wrap", alignContent: "center"}}>
         <Box sx={{width: "40px", height: "40px", borderRadius: "50%", background: color}}></Box>

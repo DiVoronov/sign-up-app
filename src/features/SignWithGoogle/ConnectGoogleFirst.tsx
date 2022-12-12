@@ -61,7 +61,7 @@ export const ConnectGoogleFirst = ( { title }: ISignWithGoogleProps ) => {
       </Box>
 
       <Box sx={{display: "flex", flexDirection: "column-reverse", flexWrap: "wrap", justifyContent: "center", margin: "2rem auto 2rem auto", alignContent: "center"}}>
-        <Description color="#24272D" width="366px" size="13px" weight="500">
+        <Description color="#24272D" width="95%" size="13px" weight="500">
           To continue, Google will share your name, email address,
           language preference, and profile picture with Chad.
           Before using this app, you can review Chad's

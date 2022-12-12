@@ -7,7 +7,7 @@ flex-direction: column;
 align-items: center;
 padding: 0px;
 width: 400px;
-height: 370px;
+/* height: 370px; */
 background: #FFFFFF;
 flex: none;
 order: 6;
@@ -65,5 +65,27 @@ flex-grow: 0;
   line-height: 18px;
   letter-spacing: -0.01em;
   color: #D24646;
+}
+
+@media screen and (max-width: 450px) {
+  padding-Left: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+  & #bottom-title {
+    width: max-content;
+    padding-right: 50px;
+    & > span {
+      width: max-content;
+      justify-content: center;
+    }
+  }
+  & .InputField {
+    & #eye-icon {
+      position: relative;
+      right: -270px;
+      top: 30px;
+      z-index: 50;
+    }
+  }
 }
 `;

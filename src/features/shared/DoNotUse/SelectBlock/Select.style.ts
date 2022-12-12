@@ -58,6 +58,13 @@ flex-grow: 1;
   order: 0;
   flex-grow: 1;
 }
+
+@media screen and (max-width: 450px) {
+  width: 326px;
+  & option {
+    width: 326px;
+  }
+}
 `;
 
 export const styleOfInput = {

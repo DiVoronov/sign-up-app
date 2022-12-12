@@ -6,7 +6,7 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-padding: 1px 96px 2px 1px;
+padding: 1px 96px 1px 1px;
 gap: 96px;
 margin-top: 24px;
 background: #5383EC;
@@ -31,5 +31,17 @@ cursor: pointer;
   line-height: 21px;
   letter-spacing: -0.01em;
   color: #FFFFFF;
+  width: max-content;
+}
+
+@media screen and (max-width: 450px) {
+  width: 326px;
+  gap: 50px;
+  padding: 1px;
+  justify-content: flex-start;
+
+  & > span {
+    /* margin-left: 30px; */
+  }
 }
 `;

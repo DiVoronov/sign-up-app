@@ -2,25 +2,39 @@ import React from "react";
 import styled from "styled-components";
 
 export const StyledLoadingGoogle = styled.div`
-display: flex;
-flex-direction: column;
-gap: 2rem;
-align-items: center;
-flex-wrap: wrap;
-margin: 4rem;
+position: fixed;
+top: 0px;
+left: 0px;
+width: 1440px;
+height: 900px;
+background: #FFFFFF;
 
-& span {
-  align-self: center;
+& #boxLoading {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 4rem;
+
+  & span {
+    align-self: center;
+  }
+
+  & #load {
+    animation: rotatedLoad 1s linear infinite 0s;
+
+    @keyframes rotatedLoad {
+      100% {
+        transform: rotate(360deg);
+        transform-origin: center;
+      }
+    } 
+  }
 }
 
-& #load {
-  animation: rotatedLoad 1s linear infinite 0s;
-
-  @keyframes rotatedLoad {
-    100% {
-      transform: rotate(360deg);
-      transform-origin: center;
-    }
-  } 
+@media screen and (max-width: 450px) {
+  width: 400px;
+  height: 900px;
 }
 `;

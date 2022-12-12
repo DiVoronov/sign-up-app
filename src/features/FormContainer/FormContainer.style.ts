@@ -11,4 +11,11 @@ width: 872px;
 height: 900px;
 left: 568px;
 top: 0px;
+
+@media screen and (max-width: 450px) {
+  width: 872px;
+  height: 450px;
+  left: 0px;
+  top: 0px;
+}
 `

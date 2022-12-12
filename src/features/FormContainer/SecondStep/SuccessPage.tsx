@@ -15,10 +15,10 @@ interface ITitleSuccessProps {
 
 export const SuccessPage = ( { title }: ITitleSuccessProps ) => {
 
-  const dispatch = useDispatch();
-  const handleSuccess = () => {
-    dispatch(setRegistrationStatus(true));
-  };
+  // const dispatch = useDispatch();
+  // const handleSuccess = () => {
+  //   dispatch(setRegistrationStatus(true));
+  // };
 
   return (
     <ContainerShared>
@@ -26,7 +26,7 @@ export const SuccessPage = ( { title }: ITitleSuccessProps ) => {
         <Box sx={{mb: 1}}><Success/></Box>
         <Article title="Response received" size="20px"/>
         <Description color="#5F82A0" width="100%" size="12px">Thank you for your interest in Chad! We’ll be hard at work building integrations to support your {title}.</Description>
-        <MainButton title="Done" callback={handleSuccess}/>
+        <MainButton title="Done"/>
       </Box>
     </ContainerShared>
   );

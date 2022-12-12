@@ -18,4 +18,11 @@ border-radius: 12px;
   top: 136px; */
   border-bottom: 1px solid #BEC0C7;
 }
+
+@media screen and (max-width: 450px) {
+  width: 350px;
+  & #first-line {
+    width: 350px;
+  }
+}
 `;

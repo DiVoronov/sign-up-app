@@ -1,12 +1,17 @@
 import React from "react";
 import { Box } from "@mui/material";
 import { Description } from "../shared/Description/Description";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../app/store";
 
 import { GoogleEmailItem } from "../shared/GoogleEmailItem/GoogleEmailItem";
 
 import { ReactComponent as UserCircle } from "./UserCircle.svg";
 import { ReactComponent as GmailLogo } from "./GmailLogo.svg";
 import { ReactComponent as IconInfo } from "./IconInfo.svg";
+import { setIdentificationGoogleObjectNull } from "../../app/Slices/identificationGoogleObject";
+import { setRegistrationStatus } from "../../app/Slices/isRegistrationDoneSlice";
+import { setLoadingGoogle } from "../../app/Slices/isLoadingGoogle";
 
 interface ISignWithGoogleProps {
   title: string
@@ -25,6 +30,7 @@ interface IGoogleArticlesProps {
 
 interface ICancelAllowButtonProps {
   title: string
+  callback?: () => void
 };
 
 const CircleBox = ( { size, background }: ICircleBoxProps ) => (<Box sx={{borderRadius: "50%", background: background, width: size, height: size,}}></Box>)
@@ -46,7 +52,7 @@ const GoogleArticles = ( { logo, title }: IGoogleArticlesProps ) => {
   );
 };
 
-const CancelAllowButton = ( { title }: ICancelAllowButtonProps ) => (
+const CancelAllowButton = ( { title, callback }: ICancelAllowButtonProps ) => (
 <Box 
   component="button" 
   sx={{
@@ -59,12 +65,26 @@ const CancelAllowButton = ( { title }: ICancelAllowButtonProps ) => (
     justifyContent: "center",
     cursor: "pointer"
   }}
+  onClick={callback}
 >
   <Description color="#2F70EE" width="max-content" size="14px">{ title }</Description>
 </Box>
-)
+);
+
 
 export const ConnectGoogleSecond = ( { title, color }: ISignWithGoogleProps ) => {
+
+  const dispatch = useDispatch();
+  const handleSetObjectGoogleNull = () => {
+    dispatch(setIdentificationGoogleObjectNull(""))
+  };
+  const handleAllowObjectGoogle = () => {
+    dispatch(setLoadingGoogle(true));
+    setTimeout( () => {
+      dispatch(setRegistrationStatus(true));
+      dispatch(setLoadingGoogle(false));
+    }, 2000);
+  };
 
   return (
     <Box sx={{width: "90%"}}>
@@ -97,8 +117,8 @@ export const ConnectGoogleSecond = ( { title, color }: ISignWithGoogleProps ) =>
       </Box>
 
       <Box sx={{display: "flex", gap: "16px", m: 3, mb: 8}}>
-        <CancelAllowButton title="Cancel"/>
-        <CancelAllowButton title="Allow"/>
+        <CancelAllowButton title="Cancel" callback={handleSetObjectGoogleNull}/>
+        <CancelAllowButton title="Allow" callback={handleAllowObjectGoogle}/>
       </Box>
 
     </Box>

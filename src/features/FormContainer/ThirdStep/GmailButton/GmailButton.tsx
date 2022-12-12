@@ -15,7 +15,7 @@ export const GmailButton = ( { callback }: IGmailButtonProps ) => {
       <Box>
         <GmailIcon/>
       </Box>
-      <Box component="span" sx={{width: "max-content"}}>Connect Gmail account</Box>
+      <Box component="span">Connect Gmail account</Box>
     </StyledGmailButton>
   );
 };

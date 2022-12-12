@@ -12,7 +12,7 @@ export const FooterGoogleSign = () => {
       display: "flex", 
       justifyContent: "space-between",
       ml: "auto", mr: "auto",
-      width: "470px",
+      width: {xs: "350px", sm: "470px"},
     }}
     >
       <Box sx={{display: "flex", justifyContent: "space-between"}}>

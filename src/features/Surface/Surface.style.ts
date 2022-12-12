@@ -13,4 +13,7 @@ top: 0px;
   bottom: -1.33%;
 }
 
+@media screen and (max-width: 450px) {
+  display: none;
+}
 `;

@@ -17,4 +17,8 @@ left: 0px;
 top: 0px;
 
 background: linear-gradient(339.02deg, #0D3251 0%, #19476C 103.05%);
+
+@media screen and (max-width: 450px) {
+  display: none;
+}
 `;

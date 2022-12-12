@@ -9,12 +9,12 @@ export const LoadingGoogle = () => {
 
   return (
     <StyledLoadingGoogle>
-
-      <Box id="load">
-        <Loading/>
+      <Box id="boxLoading">
+        <Box id="load">
+          <Loading/>
+        </Box>
+        <Description color="#2F3237" width="max-content" size="16px">One moment please...</Description>
       </Box>
-      <Description color="#2F3237" width="max-content" size="16px">One moment please...</Description>
-
     </StyledLoadingGoogle>
   )
 };

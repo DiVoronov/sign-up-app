@@ -14,6 +14,13 @@ background: #FFFFFF;
 box-shadow: 0px 5px 20px rgba(108, 117, 139, 0.2);
 border-radius: 8px;
 flex: none;
-order: 0;
-flex-grow: 0;
+
+@media screen and (max-width: 450px) {
+  width: 390px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  box-shadow: none;
+
+}
 `
