@@ -17,8 +17,6 @@ font-style: normal;
 font-weight: 400;
 font-size: ${ props => props.theme.size };
 line-height: 21px;
-/* display: flex;
-align-items: center; */
 letter-spacing: -0.01em;
 color: ${ props => props.theme.color };
 `;

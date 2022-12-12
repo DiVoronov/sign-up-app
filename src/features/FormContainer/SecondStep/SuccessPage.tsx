@@ -6,19 +6,12 @@ import { MainButton } from "../../shared/MainButton/MainButton";
 import { Article } from "../../shared/Article/Article";
 
 import { ReactComponent as Success } from "./Success.svg";
-import { setRegistrationStatus } from "../../../app/Slices/isRegistrationDoneSlice";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../../app/store";
+
 interface ITitleSuccessProps {
   title: string
-}
+};
 
 export const SuccessPage = ( { title }: ITitleSuccessProps ) => {
-
-  // const dispatch = useDispatch();
-  // const handleSuccess = () => {
-  //   dispatch(setRegistrationStatus(true));
-  // };
 
   return (
     <ContainerShared>

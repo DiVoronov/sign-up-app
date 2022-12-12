@@ -1,6 +1,5 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { Header } from "../../shared/Header/Header";
 import { Description } from "../../shared/Description/Description";
 
 export const BlockInfo = ( ) => {

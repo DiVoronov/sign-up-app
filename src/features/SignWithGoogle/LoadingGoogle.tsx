@@ -16,5 +16,5 @@ export const LoadingGoogle = () => {
         <Description color="#2F3237" width="max-content" size="16px">One moment please...</Description>
       </Box>
     </StyledLoadingGoogle>
-  )
+  );
 };

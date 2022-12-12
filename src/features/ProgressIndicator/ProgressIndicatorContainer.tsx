@@ -1,7 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
 import { StyledProgressIndicatorContainer } from "./ProgressIndicatorContainer.style";
-import { Header } from "../shared/Header/Header";
 import { StepCircle } from "../shared/StepCircle/StepCircle";
 import { Line } from "../shared/StepCircle/Line";
 import { ArticleStep } from "../shared/ArticleStep/ArticleStep";

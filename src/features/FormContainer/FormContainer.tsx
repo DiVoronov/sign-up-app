@@ -14,7 +14,6 @@ import { ConnectionProcessEmail } from "./ThirdStep/ConnectionProcessEmail";
 import { DoNotUse } from "../shared/DoNotUse/DoNotUse";
 import { SuccessPage } from "./SecondStep/SuccessPage";
 import { OnboardingComplete } from "../OnboardingComplete/OnboardingComplete";
-import { Modal } from "../OnboardingComplete/Modal";
 import { ProgressIndicatorContainerMobile } from "../ProgressIndicator/ProgressIndicatorContainerMobile";
 
 export const FormContainer = ( ) => {
@@ -89,14 +88,6 @@ export const FormContainer = ( ) => {
         <SuccessPage title="platform"/>
         :
         <OnboardingComplete title="ffff"/>
-
-        
-
-        // <ShopifyConnected/>
-        // <ConnectionProcessEmail/>
-        // <SuccessPage title="platform"/>
-        // <DoNotUse title="Shopify" description="Chad Beta is currently only available on Shopify. We’ll send you an email when Chad becomes available on your platform." optionsArray={optionsArrayShopify}/>
-        // <DoNotUse title="Google" description="Unfortunately, Chad Beta only integrates with Gmail. Let us know what email client you use to receive customer support emails and we’ll let you know when we add it as an integration." optionsArray={optionsArrayGoogle}/>
 
       }
       

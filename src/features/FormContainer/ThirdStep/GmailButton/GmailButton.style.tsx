@@ -39,9 +39,5 @@ cursor: pointer;
   gap: 50px;
   padding: 1px;
   justify-content: flex-start;
-
-  & > span {
-    /* margin-left: 30px; */
-  }
 }
 `;

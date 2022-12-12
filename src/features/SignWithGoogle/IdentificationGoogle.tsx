@@ -44,8 +44,3 @@ export const IdentificationGoogle = () => {
   );
 };
 
-          {/* <SignWithGoogle title="ff" children={<ConnectGoogleFirst title="ggg"/>}/> */}
-          {/* <SignWithGoogle title="ff" children={<ConnectGoogleSecond title="gigachad@gmail.com" color="#32ABF2"/>}/> */}
-          {/* <FooterGoogleSign/> */}
-          {/* <LoadingGoogle/> */}
-

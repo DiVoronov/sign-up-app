@@ -108,41 +108,5 @@ export const ProgressIndicatorContainerMobile = () => {
       </Box>
 
     </StyledProgressIndicatorContainerMobile>
-
-
-    // <StyledProgressIndicatorContainer>
-    //   <Box id="steps-and-buttons">
-    //     <Box sx={{display: "flex"}}>
-    //       <Box sx={{
-    //         display: "flex", flexDirection: "column", alignItems: "center",
-    //         ["& > div"]: { display: "flex" }
-    //       }}>
-    //         <StepCircle status={isAccountCreateString}/>
-    //         <Line status={statusFirstLineString}/>
-
-    //         <StepCircle status={isConnectShopifyString}/>
-    //         <Line status={statusSecondLineString}/>
-
-    //         <StepCircle status={isConnectEmailString}/>
-    //         <Line status={statusThirdLineString}/>
-
-    //         <StepCircle status={isRegistrationDoneString}/>
-
-    //       </Box>
-    //       <Box sx={{display: "flex", flexDirection: "column", justifyContent: "space-between", ml: 2, padding: "5px"}}>
-    //         <ArticleStep condition={isAccountCreateString} title="Welcome"/>
-    //         <ArticleStep condition={isConnectShopifyString} title="Connect your Shopify store"/>
-    //         <ArticleStep condition={isConnectEmailString} title="Connect your customer support email"/>
-    //         <ArticleStep condition={isRegistrationDoneString} title="Done"/>
-    //       </Box>
-    //     </Box>
-    //     <Box sx={{display: "flex", justifyContent: "space-between", width: "100%", mt: 5}}>
-    //       <PrevNextButtons title="Back" condition="active"/>
-    //       <PrevNextButtons title="Next" condition="inactive"/>
-    //     </Box>
-    //   </Box>
-
-    //   <OnboardingStats/>
-    // </StyledProgressIndicatorContainer>
-  )
+  );
 };

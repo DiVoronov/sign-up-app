@@ -23,32 +23,22 @@ const bodyPostSlice = createSlice({
   reducers: {
     setNamePost (state, action) {
       state.name = action.payload;
-      console.log(state.name);
-      
       return state;
     },
     setEmailPost (state, action) {
       state.email = action.payload;
-      console.log(state.email);
-
       return state;
     },
     setPasswordPost (state, action) {
       state.password = action.payload;
-      console.log(state.password);
-
       return state;
     },
     setShopTokenPost (state, action) {
       state.shop_token = action.payload;
-      console.log(state.shop_token);
-
       return state;
     },
     setGoogleTokenPost (state, action) {
       state.google_token = action.payload;
-      console.log(state.google_token);
-
       return state;
     },
   }

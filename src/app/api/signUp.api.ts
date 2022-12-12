@@ -1,10 +1,6 @@
 import React from "react";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IBodyPOST, IResponseGoogle, IResponseShopifySuccess, IResponseShopifyFailure, IResponseQueryShopify, IResponseShopify } from "./signUp.types";
-import { BaseQueryResult, BaseQueryFn } from "@reduxjs/toolkit/dist/query/baseQueryTypes";
-
-//IResponseShopifySuccess | IResponseShopifyFailure
-
+import { IBodyPOST, IResponseGoogle, IResponseShopify } from "./signUp.types";
 
 export const signUpApi = createApi({
   reducerPath: "signUpApi",
@@ -27,7 +23,6 @@ export const signUpApi = createApi({
       invalidatesTags: [{ type: 'Post', id: 'LIST' }]
     }),
   })
-})
-
+});
 
 export const { useGetShopifyQuery, useGetGoogleQuery, usePostRegisterMutation } = signUpApi;

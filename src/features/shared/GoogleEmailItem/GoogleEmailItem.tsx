@@ -2,7 +2,6 @@ import React from "react";
 import { Box } from "@mui/material";
 import { Description } from "../Description/Description";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../../app/store";
 import { setIdentificationGoogleObject } from "../../../app/Slices/identificationGoogleObject";
 
 interface IGoogleEmailItemProps {

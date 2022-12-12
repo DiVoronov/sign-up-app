@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Box } from "@mui/material";
-import { Header } from "../../shared/Header/Header";
 import { Description } from "../../shared/Description/Description";
 import { ContainerShared } from "../../shared/Container/ContainerShared";
 import { ChadLogoHeader } from "../../shared/ChadLogoHeader/ChadLogoHeader";
@@ -20,7 +19,6 @@ export const ConnectionProcessEmail = () => {
   const dispatch = useDispatch();
   const useHandleConnectGoogle = () => {
     dispatch(setIdentificationGoogle(true));
-    // setIsRequest(true);
   };
 
   const { data: dataGoogle, isLoading, error } = useGetGoogleQuery();
@@ -38,7 +36,6 @@ export const ConnectionProcessEmail = () => {
       <ChadLogoHeader/>
       <ProgressIndicatorContainerMobile/>
       <Box id="spacer" sx={{height: "24px", order: "2", display: "flex"}}></Box>
-      {/* <Header title="Connect your customer support email"/> */}
       <Description color="#134267" width="100%" size="24px" weight="600">Connect your customer support email</Description>
       <Box id="spacer" sx={{height: "16px", order: "4"}}></Box>
       <Description color="#9196A1" width="100%">Allows Chad to send automated responses on your behalf from your usual support mailbox</Description>

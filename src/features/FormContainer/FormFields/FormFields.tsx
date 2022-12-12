@@ -29,25 +29,11 @@ export const FormFields = () => {
     event.preventDefault();
   };
 
-  function handleValueName (event: React.FormEvent<HTMLDivElement>) {
-    // console.log(event.target.dispatchEvent(event));
-    
-    // setValueName(event.target)
-  };
-
-  // from MainButton
   const statusWelcomeCreateAccount = useSelector( (state: RootState) => state.welcomeCreateAccount);
 
   const dispatch = useDispatch();
   function completeCreationAccount () {
     setIsEmpty(true);
-    // console.log("!!!");
-    // console.log(
-    //   statusWelcomeCreateAccount.name,
-    //   statusWelcomeCreateAccount.email,
-    //   statusWelcomeCreateAccount.password
-    // );
-    
     (
       statusWelcomeCreateAccount.name &&
       statusWelcomeCreateAccount.email &&
@@ -66,7 +52,7 @@ export const FormFields = () => {
       <Box className="InputField">
         <Article title="Your name"/>
 
-        <FormControl onChange={ (event) => handleValueName(event) }>
+        <FormControl>
           <Input type="text" placeholder="Mega Chad" isEmpty={isEmpty} />
         </FormControl>
         
@@ -92,8 +78,6 @@ export const FormFields = () => {
           
         </FormControl>
 
-        
-        
       </Box>
       <Box sx={{m: 2}}></Box>
       <MainButton title="Create account" callback={completeCreationAccount}/>

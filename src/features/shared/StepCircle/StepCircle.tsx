@@ -1,4 +1,4 @@
-import React, { ReactNode, FC } from "react";
+import React from "react";
 import { Box } from "@mui/material";
 
 import { ReactComponent as InActive } from "./CircleConditionINActive.svg";

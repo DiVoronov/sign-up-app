@@ -10,8 +10,6 @@ import { RootState } from "../../../app/store";
 
 import { useSelector, useDispatch } from "react-redux";
 import { useGetShopifyQuery } from "../../../app/api/signUp.api";
-import { IResponseShopifySuccess, IResponseShopifyFailure } from '../../../app/api/signUp.types';
-import { setName } from "../../../app/Slices/welcomeCreateAccountSlice";
 import { setConnectShopify } from "../../../app/Slices/connectShopifySlice";
 import { setDoNotUse } from "../../../app/Slices/doNotUseShopifySlice";
 import { ProgressIndicatorContainerMobile } from "../../ProgressIndicator/ProgressIndicatorContainerMobile";
@@ -20,7 +18,6 @@ export const ConnectionProcessShopify = () => {
 
   const statusWelcomeCreateAccount = useSelector( (state: RootState) => state.welcomeCreateAccount);
 
-  const [dataShopifyMain, setDataShopifyMain] = useState< IResponseShopifySuccess | IResponseShopifyFailure | undefined >(undefined)
   const [isRequest, setIsRequest] = useState(false);
 
   const [ connecting, setConnecting ] = useState(false);

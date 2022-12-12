@@ -11,7 +11,6 @@ interface ISignWithGoogleProps {
   children: React.ReactNode
 };
 
-
 export const SignWithGoogle = ( { title, children }: ISignWithGoogleProps ) => {
 
   return (
@@ -26,7 +25,6 @@ export const SignWithGoogle = ( { title, children }: ISignWithGoogleProps ) => {
         { children }
       </Box>
       
-
     </StyledSignWithGoogle>
   );
 };

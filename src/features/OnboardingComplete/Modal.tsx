@@ -3,7 +3,6 @@ import { Box } from "@mui/material";
 import { Description } from "../shared/Description/Description";
 import { ContainerShared } from "../shared/Container/ContainerShared";
 import { MainButton } from "../shared/MainButton/MainButton";
-import { Article } from "../shared/Article/Article";
 
 import { ReactComponent as IconX } from "./svg/IconX.svg";
 import { ReactComponent as HeaderReady } from "./svg/HeaderReady.svg";

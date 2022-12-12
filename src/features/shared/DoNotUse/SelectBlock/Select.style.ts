@@ -32,20 +32,7 @@ flex-grow: 1;
 &:focus {
   border: 1px solid #32ABF2;
 }
-/* & option {
-  background: #FAFCFF;
-  border-radius: 8px 8px 0px 0px;
-  padding: 10px;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  color: #17191C;
-  height: "40px";
-  border: none;
-} */
+
 &::placeholder {
   font-family: 'Inter';
   font-style: normal;

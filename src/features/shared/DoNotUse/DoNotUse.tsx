@@ -3,7 +3,6 @@ import { Box } from "@mui/material";
 import { Description } from "../Description/Description";
 import { ContainerShared } from "../Container/ContainerShared";
 import { MainButton } from "../MainButton/MainButton";
-import { Article } from "../Article/Article";
 import { ChadLogoHeader } from "../ChadLogoHeader/ChadLogoHeader";
 import { Header } from "../Header/Header";
 import { StyledBottomTitle } from "./BottomTitle.style";
@@ -29,12 +28,6 @@ interface IDoNotUseProps {
   description: string
   optionsArray: IOptionsArray[]
 };
-
-// const optionsArrayShopify = [
-//   { id: 1, value: "Salesforce" },
-//   { id: 2, value: "Ecwid" },
-//   { id: 3, value: "Other" },
-// ];
 
 export const DoNotUse = ( { title, description, optionsArray }: IDoNotUseProps ) => {
 

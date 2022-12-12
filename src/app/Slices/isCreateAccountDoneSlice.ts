@@ -6,7 +6,6 @@ const isCreateAccountDoneSlice = createSlice({
   initialState: false,
   reducers: {
     setCreateAccountStatus (state, action) {
-      console.log(state);
       state = action.payload;
       return state;
     },
