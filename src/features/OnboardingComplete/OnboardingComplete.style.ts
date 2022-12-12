@@ -34,4 +34,13 @@ z-index: 1000;
   background: #0f2330;
   padding-left: 1rem;
 }
+
+@media screen and (max-width: 450px) {
+  position: flex;
+  width: 400px;
+  height: 900px;
+  background: none;
+  z-index: 1000;
+  margin: auto;
+}
 `;

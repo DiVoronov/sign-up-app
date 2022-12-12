@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Box } from "@mui/material";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProgressIndicatorContainer } from "./features/ProgressIndicator/ProgressIndicatorContainer";
+import { ProgressIndicatorContainerMobile } from "./features/ProgressIndicator/ProgressIndicatorContainerMobile";
 import { GlobalStyle } from "./GlobalStyle";
 import { Surface } from "./features/Surface/Surface";
 import { FormContainer } from "./features/FormContainer/FormContainer";
@@ -56,9 +57,15 @@ function App() {
     console.log(dataShopify);
     console.log(
       bodyPost,
-      result
+      // result,
+      updatePost(bodyPost),
       );
-  }, [dataGoogle, dataShopify, updatePost]);
+  }, [
+    // dataGoogle, 
+    // dataShopify, 
+    // updatePost, 
+    // result
+  ]);
 
   const statusIsRegistrationDone = useSelector( (state: RootState) => state.isRegistrationDone);
 
@@ -78,7 +85,10 @@ function App() {
         ?
         <Box component="div" sx={{width: "100%", minHeight: "100%", background: "#FFFFFF", position: "relative"}}>
           <Surface/>
-          <ProgressIndicatorContainer/>
+          {/* <Box sx={{display: {xs: "none", sm: "flex"}}}> */}
+            <ProgressIndicatorContainer/>
+          {/* </Box> */}
+          {/* <Box sx={{display: {xs: "flex", sm: "none"}}}><ProgressIndicatorContainerMobile/></Box> */}
           <FormContainer/>
           {/* <OnboardingComplete title="ff"/> */}
           {/* <SignWithGoogle title="ff" children={<ConnectGoogleFirst title="ggg"/>}/> */}

@@ -15,6 +15,7 @@ import { DoNotUse } from "../shared/DoNotUse/DoNotUse";
 import { SuccessPage } from "./SecondStep/SuccessPage";
 import { OnboardingComplete } from "../OnboardingComplete/OnboardingComplete";
 import { Modal } from "../OnboardingComplete/Modal";
+import { ProgressIndicatorContainerMobile } from "../ProgressIndicator/ProgressIndicatorContainerMobile";
 
 export const FormContainer = ( ) => {
 
@@ -48,6 +49,7 @@ export const FormContainer = ( ) => {
         ?
         <ContainerShared>
           <ChadLogoHeader/>
+          <ProgressIndicatorContainerMobile/>
           <Box id="spacer" sx={{height: "24px", order: "2"}}></Box>
           <Header title="Welcome to Chad"/>
           <Box id="spacer" sx={{height: "16px", order: "4"}}></Box>

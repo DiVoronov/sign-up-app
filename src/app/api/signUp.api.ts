@@ -17,13 +17,14 @@ export const signUpApi = createApi({
     getGoogle: builder.query<IResponseGoogle, void>({
       query: () => `/google`
     }),
-    postRegister: builder.mutation<IBodyPOST, IBodyPOST>({
-      query: (body: IBodyPOST) => ({
-        url: `/register`,
-        method: 'POST',
-        body,
-      }),
-      invalidatesTags: ['Post']
+    postRegister: builder.mutation< IBodyPOST , Partial<IBodyPOST>>({
+      query(body) {
+        return {
+          url: `/register`,
+          method: 'POST',
+          body,
+      }},
+      invalidatesTags: [{ type: 'Post', id: 'LIST' }]
     }),
   })
 })

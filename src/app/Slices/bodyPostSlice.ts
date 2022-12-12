@@ -1,7 +1,7 @@
 import React from "react";
 import { createSlice } from "@reduxjs/toolkit";
 
-interface IInitialState {
+export interface IInitialState {
   name: string | null
   email: string | null
   password: string | null
@@ -21,35 +21,45 @@ const bodyPostSlice = createSlice({
   name: "bodyPost",
   initialState,
   reducers: {
-    setName (state, action) {
+    setNamePost (state, action) {
       state.name = action.payload;
+      console.log(state.name);
+      
       return state;
     },
-    setEmail (state, action) {
+    setEmailPost (state, action) {
       state.email = action.payload;
+      console.log(state.email);
+
       return state;
     },
-    setPassword (state, action) {
+    setPasswordPost (state, action) {
       state.password = action.payload;
+      console.log(state.password);
+
       return state;
     },
-    setShopToken (state, action) {
+    setShopTokenPost (state, action) {
       state.shop_token = action.payload;
+      console.log(state.shop_token);
+
       return state;
     },
-    setGoogleToken (state, action) {
+    setGoogleTokenPost (state, action) {
       state.google_token = action.payload;
+      console.log(state.google_token);
+
       return state;
     },
   }
 });
 
 export const { 
-  setName, 
-  setEmail, 
-  setPassword, 
-  setShopToken, 
-  setGoogleToken,
+  setNamePost, 
+  setEmailPost, 
+  setPasswordPost, 
+  setShopTokenPost, 
+  setGoogleTokenPost,
 } = bodyPostSlice.actions;
 
 export const bodyPostReducer = bodyPostSlice.reducer;

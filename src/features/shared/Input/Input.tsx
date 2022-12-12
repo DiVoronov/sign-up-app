@@ -9,6 +9,7 @@ import FormHelperText from "@mui/material/FormHelperText";
 
 import { useSelector, useDispatch } from "react-redux";
 import { setName, setEmail, setPassword } from "../../../app/Slices/welcomeCreateAccountSlice";
+import { setNamePost, setEmailPost, setPasswordPost } from "../../../app/Slices/bodyPostSlice";
 import { setCreateAccountStatus } from "../../../app/Slices/isCreateAccountDoneSlice";
 
 interface IInputProps {
@@ -30,6 +31,11 @@ export const Input = ( { type, placeholder, value, isEmpty }: IInputProps ) => {
     type === "text" && dispatch(setName(valueInput));
     type === "email" && dispatch(setEmail(valueInput));
     type === "password" && dispatch(setPassword(valueInput));
+
+    type === "text" && dispatch(setNamePost(valueInput));
+    type === "email" && dispatch(setEmailPost(valueInput));
+    type === "password" && dispatch(setPasswordPost(valueInput));
+
   }, [valueInput]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

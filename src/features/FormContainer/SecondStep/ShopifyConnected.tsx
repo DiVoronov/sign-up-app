@@ -13,16 +13,25 @@ import { RootState } from "../../../app/store";
 import { useSelector, useDispatch } from "react-redux";
 import { setConnectShopifyStore } from "../../../app/Slices/connectShopifyStoreSlice";
 import { setConnectShopify } from "../../../app/Slices/connectShopifySlice";
+import { useGetShopifyQuery } from "../../../app/api/signUp.api";
+import { setShopTokenPost } from "../../../app/Slices/bodyPostSlice";
 
 export const ShopifyConnected = () => {
 
   const [ disconnecting, setDisconnecting ] = useState(false);
 
   const statusWelcomeCreateAccount = useSelector( (state: RootState) => state.welcomeCreateAccount);
+  const nameFromSlice = () => statusWelcomeCreateAccount.name ? statusWelcomeCreateAccount.name : "Unknown Person";
+
+  const { data: dataShopify, error: errorShopify, isLoading: isLoadingShopify } = useGetShopifyQuery(`${nameFromSlice}`);
+
 
   const dispatch = useDispatch();
   const handleConnectShopifyStore = () => {
     dispatch(setConnectShopifyStore(true));
+    dataShopify 
+    ? dispatch(setShopTokenPost(dataShopify.token)) 
+    : dispatch(setShopTokenPost("Unknown token"))
   };
 
   const handleBackToConnectShopify = async () => {

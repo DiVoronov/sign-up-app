@@ -9,8 +9,14 @@ import { PrevNextButtons } from "../shared/PrevNextButtons/PrevNextButtons";
 import { OnboardingStats } from "./OnboardingStats/OnboardingStats";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../app/store";
+import { StyledProgressIndicatorContainerMobile } from "./ProgressIndicatorContainerMobile.style";
+import { Description } from "../shared/Description/Description";
 
-export const ProgressIndicatorContainer = () => {
+import { ReactComponent as ProgressBar1 } from "./ProgressBar1.svg";
+import { ReactComponent as ProgressBar2 } from "./ProgressBar2.svg";
+import { ReactComponent as ProgressBar3 } from "./ProgressBar3.svg";
+
+export const ProgressIndicatorContainerMobile = () => {
 
   const statusWelcomeCreateAccount = useSelector( (state: RootState) => state.welcomeCreateAccount);
   const statusIsCreateAccount = useSelector( (state: RootState) => state.isCreateAccountDone);
@@ -66,40 +72,77 @@ export const ProgressIndicatorContainer = () => {
 
   const isRegistrationDoneString = isCurrentStageDone(statusThirdLineString, statusIsRegistrationDone);
 
+  const stepNumber = () => 
+    !statusIsCreateAccount 
+    ? "1"
+    : 
+    !statusConnectShopifyStore 
+    ? "2"
+    :
+    !statusConnectEmail && "3"
+  ;
+  const stepNumberString = stepNumber();
+
   return (
-    <StyledProgressIndicatorContainer>
-      <Box id="steps-and-buttons">
-        <Box sx={{display: "flex"}}>
-          <Box sx={{
-            display: "flex", flexDirection: "column", alignItems: "center",
-            ["& > div"]: { display: "flex" }
-          }}>
-            <StepCircle status={isAccountCreateString}/>
-            <Line status={statusFirstLineString}/>
-
-            <StepCircle status={isConnectShopifyString}/>
-            <Line status={statusSecondLineString}/>
-
-            <StepCircle status={isConnectEmailString}/>
-            <Line status={statusThirdLineString}/>
-
-            <StepCircle status={isRegistrationDoneString}/>
-
-          </Box>
-          <Box sx={{display: "flex", flexDirection: "column", justifyContent: "space-between", ml: 2, padding: "5px"}}>
-            <ArticleStep condition={isAccountCreateString} title="Welcome"/>
-            <ArticleStep condition={isConnectShopifyString} title="Connect your Shopify store"/>
-            <ArticleStep condition={isConnectEmailString} title="Connect your customer support email"/>
-            <ArticleStep condition={isRegistrationDoneString} title="Done"/>
-          </Box>
-        </Box>
-        <Box sx={{display: "flex", justifyContent: "space-between", width: "100%", mt: 5}}>
-          <PrevNextButtons title="Back" condition="active"/>
-          <PrevNextButtons title="Next" condition="inactive"/>
-        </Box>
+    <StyledProgressIndicatorContainerMobile>
+      
+      <Box>
+        <Description width="100%" color="#4F637D" size="12px">{`Step ${stepNumberString} of 4`}</Description>
       </Box>
 
-      <OnboardingStats/>
-    </StyledProgressIndicatorContainer>
+      <Box>
+        { 
+          !statusIsCreateAccount 
+          ? <ProgressBar1/>
+          : 
+          !statusConnectShopifyStore 
+          ? <ProgressBar2/>
+          :
+          !statusConnectEmail && <ProgressBar3/>
+        }
+      </Box>
+
+      <Box id="prevNextButtons">
+        <PrevNextButtons title="Back" condition="active" isMobile={true}/>
+        <PrevNextButtons title="Next" condition="inactive" isMobile={true}/>
+      </Box>
+
+    </StyledProgressIndicatorContainerMobile>
+
+
+    // <StyledProgressIndicatorContainer>
+    //   <Box id="steps-and-buttons">
+    //     <Box sx={{display: "flex"}}>
+    //       <Box sx={{
+    //         display: "flex", flexDirection: "column", alignItems: "center",
+    //         ["& > div"]: { display: "flex" }
+    //       }}>
+    //         <StepCircle status={isAccountCreateString}/>
+    //         <Line status={statusFirstLineString}/>
+
+    //         <StepCircle status={isConnectShopifyString}/>
+    //         <Line status={statusSecondLineString}/>
+
+    //         <StepCircle status={isConnectEmailString}/>
+    //         <Line status={statusThirdLineString}/>
+
+    //         <StepCircle status={isRegistrationDoneString}/>
+
+    //       </Box>
+    //       <Box sx={{display: "flex", flexDirection: "column", justifyContent: "space-between", ml: 2, padding: "5px"}}>
+    //         <ArticleStep condition={isAccountCreateString} title="Welcome"/>
+    //         <ArticleStep condition={isConnectShopifyString} title="Connect your Shopify store"/>
+    //         <ArticleStep condition={isConnectEmailString} title="Connect your customer support email"/>
+    //         <ArticleStep condition={isRegistrationDoneString} title="Done"/>
+    //       </Box>
+    //     </Box>
+    //     <Box sx={{display: "flex", justifyContent: "space-between", width: "100%", mt: 5}}>
+    //       <PrevNextButtons title="Back" condition="active"/>
+    //       <PrevNextButtons title="Next" condition="inactive"/>
+    //     </Box>
+    //   </Box>
+
+    //   <OnboardingStats/>
+    // </StyledProgressIndicatorContainer>
   )
 };

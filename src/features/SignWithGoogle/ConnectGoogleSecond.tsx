@@ -12,6 +12,8 @@ import { ReactComponent as IconInfo } from "./IconInfo.svg";
 import { setIdentificationGoogleObjectNull } from "../../app/Slices/identificationGoogleObject";
 import { setRegistrationStatus } from "../../app/Slices/isRegistrationDoneSlice";
 import { setLoadingGoogle } from "../../app/Slices/isLoadingGoogle";
+import { useGetGoogleQuery } from "../../app/api/signUp.api";
+import { setGoogleTokenPost } from "../../app/Slices/bodyPostSlice";
 
 interface ISignWithGoogleProps {
   title: string
@@ -74,12 +76,17 @@ const CancelAllowButton = ( { title, callback }: ICancelAllowButtonProps ) => (
 
 export const ConnectGoogleSecond = ( { title, color }: ISignWithGoogleProps ) => {
 
+  const { data: dataGoogle, error: errorGoogle, isLoading: isLoadingGoogle } = useGetGoogleQuery();
+  const tokenGoogle = dataGoogle ? dataGoogle.token : "Unknown token";
+
   const dispatch = useDispatch();
   const handleSetObjectGoogleNull = () => {
     dispatch(setIdentificationGoogleObjectNull(""))
   };
+
   const handleAllowObjectGoogle = () => {
     dispatch(setLoadingGoogle(true));
+    dispatch(setGoogleTokenPost(tokenGoogle));
     setTimeout( () => {
       dispatch(setRegistrationStatus(true));
       dispatch(setLoadingGoogle(false));

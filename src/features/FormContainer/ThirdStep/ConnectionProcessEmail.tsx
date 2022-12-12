@@ -11,6 +11,7 @@ import { useGetGoogleQuery } from "../../../app/api/signUp.api";
 import { setConnectEmail } from "../../../app/Slices/connectEmailSlice";
 import { setDoNotUseGoogle } from "../../../app/Slices/doNotUseGoogleSlice";
 import { setIdentificationGoogle } from "../../../app/Slices/identificationGoogle";
+import { ProgressIndicatorContainerMobile } from "../../ProgressIndicator/ProgressIndicatorContainerMobile";
 
 export const ConnectionProcessEmail = () => {
 
@@ -35,6 +36,7 @@ export const ConnectionProcessEmail = () => {
   return (
     <ContainerShared>
       <ChadLogoHeader/>
+      <ProgressIndicatorContainerMobile/>
       <Box id="spacer" sx={{height: "24px", order: "2", display: "flex"}}></Box>
       {/* <Header title="Connect your customer support email"/> */}
       <Description color="#134267" width="100%" size="24px" weight="600">Connect your customer support email</Description>

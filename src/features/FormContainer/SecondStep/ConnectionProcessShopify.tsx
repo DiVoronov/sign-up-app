@@ -14,6 +14,7 @@ import { IResponseShopifySuccess, IResponseShopifyFailure } from '../../../app/a
 import { setName } from "../../../app/Slices/welcomeCreateAccountSlice";
 import { setConnectShopify } from "../../../app/Slices/connectShopifySlice";
 import { setDoNotUse } from "../../../app/Slices/doNotUseShopifySlice";
+import { ProgressIndicatorContainerMobile } from "../../ProgressIndicator/ProgressIndicatorContainerMobile";
 
 export const ConnectionProcessShopify = () => {
 
@@ -52,6 +53,7 @@ export const ConnectionProcessShopify = () => {
   return (
     <ContainerShared>
       <ChadLogoHeader/>
+      <ProgressIndicatorContainerMobile/>
       <Box className="spacer" sx={{height: "24px", order: "2"}}></Box>
       <Header title="Connect your Shopify store"/>
       <Box className="spacer" sx={{height: "16px", order: "4"}}></Box>
@@ -70,7 +72,7 @@ export const ConnectionProcessShopify = () => {
         connecting 
         &&  
         <Box sx={{position: "fixed", width: {xs: "450px", sm: "1440px"}, height: "900px", background: "#FFFFFF", left: "0px", top: "0px"}}>
-          <Box sx={{position: "absolute", width: {xs: "450px", sm: "1440px"}, height: "900px", left: {xs: "100px", sm: "631px"}, top: {xs: "200px", sm: "468px"}}}>
+          <Box sx={{position: "absolute", width: {xs: "450px", sm: "1440px"}, height: "900px", left: {xs: "100px", sm: "631px"}, top: {xs: "200px", sm: "268px"}}}>
             <Description color="#9196A1" width="100%" size="16px">Connecting to Shopify...</Description>
           </Box>
         </Box>
