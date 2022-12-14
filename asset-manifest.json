@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sign-up-app/static/css/main.cc28fcd5.css",
-    "main.js": "/sign-up-app/static/js/main.26b7c17b.js",
+    "main.css": "/sign-up-app/static/css/main.81de5d83.css",
+    "main.js": "/sign-up-app/static/js/main.4f74b8ce.js",
     "static/media/Surface.svg": "/sign-up-app/static/media/Surface.cb6e6510f0af8480ef77ca22db40e0d1.svg",
     "static/media/OnboardingComplete.svg": "/sign-up-app/static/media/OnboardingComplete.bac3498174deb936acf476471acea550.svg",
     "static/media/ShopifyAvatar.svg": "/sign-up-app/static/media/ShopifyAvatar.fe3a97c420f2ab8d0363c92fc477f4a1.svg",
@@ -34,11 +34,11 @@
     "static/media/LineInActive.svg": "/sign-up-app/static/media/LineInActive.9d3b3ae872c0aaf99618437369660cc6.svg",
     "static/media/CircleActive.svg": "/sign-up-app/static/media/CircleActive.409dc4e168943d53f376fbabffa86063.svg",
     "static/media/CircleInActive.svg": "/sign-up-app/static/media/CircleInActive.7b2b769669e594a98d9022270431288f.svg",
-    "main.cc28fcd5.css.map": "/sign-up-app/static/css/main.cc28fcd5.css.map",
-    "main.26b7c17b.js.map": "/sign-up-app/static/js/main.26b7c17b.js.map"
+    "main.81de5d83.css.map": "/sign-up-app/static/css/main.81de5d83.css.map",
+    "main.4f74b8ce.js.map": "/sign-up-app/static/js/main.4f74b8ce.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc28fcd5.css",
-    "static/js/main.26b7c17b.js"
+    "static/css/main.81de5d83.css",
+    "static/js/main.4f74b8ce.js"
   ]
 }
