@@ -53,7 +53,7 @@ export const Input = ( { type, placeholder, value, isEmpty }: IInputProps ) => {
         placeholder={placeholder} 
         value={value} 
         onChange={handleChange}
-        id="outlined-input"
+        id={`outlined-input-${placeholder}`}
         aria-describedby="outlined-input-helper-text"
         theme={theme}
       >

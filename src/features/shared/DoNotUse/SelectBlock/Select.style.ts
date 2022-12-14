@@ -54,6 +54,54 @@ flex-grow: 1;
 }
 `;
 
+export const StyledOption = styled.div`
+margin-bottom: 1rem;
+& .css-1ptx2yq-MuiInputBase-root-MuiInput-root {
+  background: #F8F9FC;
+  border-radius: 4px;
+  padding: 10px 10px 10px 17px;
+  gap: 10px;
+}
+
+& .css-dp4mo9-MuiButtonBase-root-MuiMenuItem-root.Mui-selected {
+  & .ti-p {
+    display: none;
+  }
+}
+
+& .css-1ar2bnf-MuiSelect-select-MuiInputBase-input-MuiInput-input.MuiSelect-select {
+  & .ti-p {
+    display: none !important;
+  }
+}
+
+& .css-1ptx2yq-MuiInputBase-root-MuiInput-root {
+  outline: ${ props => props.theme.outline };
+}
+
+& 
+.css-1ptx2yq-MuiInputBase-root-MuiInput-root:after,
+.css-1ptx2yq-MuiInputBase-root-MuiInput-root:before {
+  content: none;
+}
+& .css-1uzq53y-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  display: none;
+}
+
+& .label+.css-1ptx2yq-MuiInputBase-root-MuiInput-root {
+  margin-top: 0px;
+}
+
+& .css-jifq7p-MuiFormLabel-root-MuiInputLabel-root {
+    top: 17px;
+}
+
+@media screen and (max-width: 450px) {
+  width: 326px;
+}
+`;
+
+
 export const styleOfInput = {
   display: "flex",
   flexDirection: "row",
