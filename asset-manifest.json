@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sign-up-app/static/css/main.5b17daf4.css",
-    "main.js": "/sign-up-app/static/js/main.b214de1b.js",
+    "main.css": "/sign-up-app/static/css/main.aea71432.css",
+    "main.js": "/sign-up-app/static/js/main.b56805b1.js",
     "static/media/Surface.svg": "/sign-up-app/static/media/Surface.cb6e6510f0af8480ef77ca22db40e0d1.svg",
     "static/media/OnboardingComplete.svg": "/sign-up-app/static/media/OnboardingComplete.bac3498174deb936acf476471acea550.svg",
     "static/media/ShopifyAvatar.svg": "/sign-up-app/static/media/ShopifyAvatar.fe3a97c420f2ab8d0363c92fc477f4a1.svg",
@@ -21,6 +21,7 @@
     "static/media/CircleConditionActiveSecondTick.svg": "/sign-up-app/static/media/CircleConditionActiveSecondTick.b6c5212efc98ee073aab1ee8c771a247.svg",
     "static/media/CircleConditionINActiveTick.svg": "/sign-up-app/static/media/CircleConditionINActiveTick.be1d6fba6ed6cdb6d7e4bc161fe7981b.svg",
     "static/media/ProgressBar1.svg": "/sign-up-app/static/media/ProgressBar1.2b92ffcbb2f02811ff1e0cb0d9682ba0.svg",
+    "static/media/TickCheck.svg": "/sign-up-app/static/media/TickCheck.d9deffabdd6c4459cffc7a04af1b1282.svg",
     "static/media/ProgressBar3.svg": "/sign-up-app/static/media/ProgressBar3.1c33848295d12aca8087b68c4cc62d04.svg",
     "static/media/TickGreen.svg": "/sign-up-app/static/media/TickGreen.659aaccacfa638cdfa24fc9cf6f7e5d2.svg",
     "static/media/ProgressBar2.svg": "/sign-up-app/static/media/ProgressBar2.8c0ed7322af917b478d3c543b9b50991.svg",
@@ -33,11 +34,11 @@
     "static/media/LineInActive.svg": "/sign-up-app/static/media/LineInActive.9d3b3ae872c0aaf99618437369660cc6.svg",
     "static/media/CircleActive.svg": "/sign-up-app/static/media/CircleActive.409dc4e168943d53f376fbabffa86063.svg",
     "static/media/CircleInActive.svg": "/sign-up-app/static/media/CircleInActive.7b2b769669e594a98d9022270431288f.svg",
-    "main.5b17daf4.css.map": "/sign-up-app/static/css/main.5b17daf4.css.map",
-    "main.b214de1b.js.map": "/sign-up-app/static/js/main.b214de1b.js.map"
+    "main.aea71432.css.map": "/sign-up-app/static/css/main.aea71432.css.map",
+    "main.b56805b1.js.map": "/sign-up-app/static/js/main.b56805b1.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b17daf4.css",
-    "static/js/main.b214de1b.js"
+    "static/css/main.aea71432.css",
+    "static/js/main.b56805b1.js"
   ]
 }
