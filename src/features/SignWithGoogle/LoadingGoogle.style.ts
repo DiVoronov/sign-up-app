@@ -5,7 +5,7 @@ export const StyledLoadingGoogle = styled.div`
 position: fixed;
 top: 0px;
 left: 0px;
-width: 1440px;
+width: 100%;
 height: 900px;
 background: #FFFFFF;
 

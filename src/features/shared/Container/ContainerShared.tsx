@@ -9,7 +9,7 @@ interface IContainerSharedProps {
 export const ContainerShared = ( { children }: IContainerSharedProps ) => {
 
   return (
-    <StyledSharedContainer>
+    <StyledSharedContainer className="shared-container">
       { children }
     </StyledSharedContainer>
   );

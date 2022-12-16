@@ -6,13 +6,16 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 align-items: center;
-padding: 200px 102px 56px;
+padding: 150px 50px;
+/* padding-top: 200px 102px 56px; */
+min-width: 470px;
+/* width: 35%; */
 gap: 162px;
 
-position: absolute;
-min-width: 36%;
-max-width: 568px;
-min-height: 900px;
+/* position: absolute; */
+/* min-width: 36%; */
+/* max-width: 568px; */
+height: 900px;
 left: 0px;
 top: 0px;
 

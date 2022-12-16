@@ -42,7 +42,7 @@ export const FormContainer = ( ) => {
   ];
 
   return (
-    <StyledFormContainer>
+    <StyledFormContainer className="styled-form-container">
       {
         !statusIsCreateAccount
         ?

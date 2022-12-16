@@ -24,7 +24,7 @@ function App() {
         :
         !statusIdentificationGoogle
         ?
-        <Box component="div" sx={{width: "100%", minHeight: "100%", background: "#FFFFFF", position: "relative"}}>
+        <Box component="div" sx={{width: "100%", minHeight: "100%", background: "#FFFFFF", display: "flex"}}>
           <Surface/>
           <ProgressIndicatorContainer/>
           <FormContainer/>
