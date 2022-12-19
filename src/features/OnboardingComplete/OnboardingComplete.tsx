@@ -18,11 +18,7 @@ import { IInitialState } from "../../app/Slices/bodyPostSlice";
 import { setAlertActive } from "../../app/Slices/isAlertActive";
 import { Alert } from "../shared/Alert/Alert";
 
-interface IOnboardingCompleteProps {
-  title: string
-};
-
-export const OnboardingComplete = ( { title }: IOnboardingCompleteProps ) => {
+export const OnboardingComplete = () => {
 
   const statusWelcomeCreateAccount = useSelector( (state: RootState) => state.welcomeCreateAccount);
   const statusAlert = useSelector( (state: RootState) => state.isAlertActive);
