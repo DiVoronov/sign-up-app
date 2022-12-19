@@ -8,9 +8,10 @@ interface IPrevNextButtonsProps {
   title: string
   condition: string
   isMobile?: boolean
+  callback?: () => void
 };
 
-export const PrevNextButtons = ( { title, condition, isMobile }: IPrevNextButtonsProps ) => {
+export const PrevNextButtons = ( { title, condition, isMobile, callback }: IPrevNextButtonsProps ) => {
 
   const background = () => (condition === "active" && !isMobile) ? "#134267" : "none";
   const colorText = () => (!isMobile) ? "#93A8C1" : (isMobile && (condition === "active")) ? "#4F637D" : "#C3CAD5";
@@ -23,7 +24,7 @@ export const PrevNextButtons = ( { title, condition, isMobile }: IPrevNextButton
   };
 
   return (
-    <StyledPrevNextButtons theme={theme}>
+    <StyledPrevNextButtons theme={theme} onClick={callback}>
       { title === "Back" && <img src={Prev}/> }
         { title }
       { title === "Next" && <img src={Next}/> }

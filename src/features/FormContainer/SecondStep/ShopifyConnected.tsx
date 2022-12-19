@@ -15,12 +15,15 @@ import { setConnectShopifyStore } from "../../../app/Slices/connectShopifyStoreS
 import { setConnectShopify } from "../../../app/Slices/connectShopifySlice";
 import { useGetShopifyQuery } from "../../../app/api/signUp.api";
 import { setShopTokenPost } from "../../../app/Slices/bodyPostSlice";
+import { Alert } from "../../shared/Alert/Alert";
 
 export const ShopifyConnected = () => {
 
   const [ disconnecting, setDisconnecting ] = useState(false);
 
   const statusWelcomeCreateAccount = useSelector( (state: RootState) => state.welcomeCreateAccount);
+  const statusAlert = useSelector( (state: RootState) => state.isAlertActive);
+
   const nameFromSlice = () => statusWelcomeCreateAccount.name ? statusWelcomeCreateAccount.name : "Unknown Person";
 
   const { data: dataShopify, error: errorShopify, isLoading: isLoadingShopify } = useGetShopifyQuery(`${nameFromSlice}`);
@@ -64,6 +67,11 @@ export const ShopifyConnected = () => {
           <Box component="span" onClick={handleBackToConnectShopify}><Box component="a">Connect another one</Box></Box>
         </Box>
       </StyledShopifyConnected>
+      {
+        statusAlert
+        &&
+        <Alert boldTitle="continue the process" alertType="error">Please </Alert>
+      }
     </ContainerShared>
   );
 };

@@ -11,8 +11,12 @@ import { setConnectEmail } from "../../../app/Slices/connectEmailSlice";
 import { setDoNotUseGoogle } from "../../../app/Slices/doNotUseGoogleSlice";
 import { setIdentificationGoogle } from "../../../app/Slices/identificationGoogle";
 import { ProgressIndicatorContainerMobile } from "../../ProgressIndicator/ProgressIndicatorContainerMobile";
+import { Alert } from "../../shared/Alert/Alert";
+import { RootState } from "../../../app/store";
 
 export const ConnectionProcessEmail = () => {
+
+  const statusAlert = useSelector( (state: RootState) => state.isAlertActive);
 
   const [isRequest, setIsRequest] = useState(false);
 
@@ -48,6 +52,11 @@ export const ConnectionProcessEmail = () => {
       <Box component="a" sx={{order: "10", mt: 2, cursor: "pointer"}} onClick={handleDoNotUseGoogle}>
         <Description color="#9196A1" width="100%" size="12px">I don’t use Gmail</Description>
       </Box>
+      {
+        statusAlert
+        &&
+        <Alert boldTitle="connect Google account" alertType="error">Please </Alert>
+      }
     </ContainerShared>
   );
 };

@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../app/store";
 import { StyledProgressIndicatorContainerMobile } from "./ProgressIndicatorContainerMobile.style";
 import { Description } from "../shared/Description/Description";
+import { backFunction, nextFunction } from "./BackNextFunctions";
 
 import { ReactComponent as ProgressBar1 } from "./ProgressBar1.svg";
 import { ReactComponent as ProgressBar2 } from "./ProgressBar2.svg";
@@ -18,12 +19,14 @@ import { ReactComponent as ProgressBar3 } from "./ProgressBar3.svg";
 
 export const ProgressIndicatorContainerMobile = () => {
 
+  const allState = useSelector( (state: RootState) => state);
   const statusWelcomeCreateAccount = useSelector( (state: RootState) => state.welcomeCreateAccount);
   const statusIsCreateAccount = useSelector( (state: RootState) => state.isCreateAccountDone);
   const statusConnectShopify = useSelector( (state: RootState) => state.connectShopify);
   const statusConnectShopifyStore = useSelector( (state: RootState) => state.isConnectShopifyStore);
   const statusConnectEmail = useSelector( (state: RootState) => state.connectEmail);
   const statusIsRegistrationDone = useSelector( (state: RootState) => state.isRegistrationDone);
+  const dispatch = useDispatch();
 
   const isAccountCreate = () => {
     if (
@@ -103,8 +106,8 @@ export const ProgressIndicatorContainerMobile = () => {
       </Box>
 
       <Box id="prevNextButtons">
-        <PrevNextButtons title="Back" condition="active" isMobile={true}/>
-        <PrevNextButtons title="Next" condition="inactive" isMobile={true}/>
+        <PrevNextButtons title="Back" condition="active" isMobile={true} callback={() => backFunction(allState, dispatch)}/>
+        <PrevNextButtons title="Next" condition="inactive" isMobile={true} callback={() => nextFunction(allState, dispatch)}/>
       </Box>
 
     </StyledProgressIndicatorContainerMobile>

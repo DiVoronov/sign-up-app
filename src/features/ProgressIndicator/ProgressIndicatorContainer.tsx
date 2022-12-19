@@ -8,15 +8,19 @@ import { PrevNextButtons } from "../shared/PrevNextButtons/PrevNextButtons";
 import { OnboardingStats } from "./OnboardingStats/OnboardingStats";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../app/store";
+import { backFunction, nextFunction } from "./BackNextFunctions";
 
 export const ProgressIndicatorContainer = () => {
 
+  const allState = useSelector( (state: RootState) => state);
   const statusWelcomeCreateAccount = useSelector( (state: RootState) => state.welcomeCreateAccount);
   const statusIsCreateAccount = useSelector( (state: RootState) => state.isCreateAccountDone);
   const statusConnectShopify = useSelector( (state: RootState) => state.connectShopify);
   const statusConnectShopifyStore = useSelector( (state: RootState) => state.isConnectShopifyStore);
   const statusConnectEmail = useSelector( (state: RootState) => state.connectEmail);
   const statusIsRegistrationDone = useSelector( (state: RootState) => state.isRegistrationDone);
+
+  const dispatch = useDispatch();
 
   const isAccountCreate = () => {
     if (
@@ -93,8 +97,8 @@ export const ProgressIndicatorContainer = () => {
           </Box>
         </Box>
         <Box sx={{display: "flex", justifyContent: "space-between", width: "100%", mt: 5}}>
-          <PrevNextButtons title="Back" condition="active"/>
-          <PrevNextButtons title="Next" condition="inactive"/>
+          <PrevNextButtons title="Back" condition="active" callback={() => backFunction(allState, dispatch)}/>
+          <PrevNextButtons title="Next" condition="inactive" callback={() => nextFunction(allState, dispatch)}/>
         </Box>
       </Box>
 

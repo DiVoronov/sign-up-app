@@ -15,6 +15,7 @@ import { DoNotUse } from "../shared/DoNotUse/DoNotUse";
 import { SuccessPage } from "./SecondStep/SuccessPage";
 import { OnboardingComplete } from "../OnboardingComplete/OnboardingComplete";
 import { ProgressIndicatorContainerMobile } from "../ProgressIndicator/ProgressIndicatorContainerMobile";
+import { Alert } from "../shared/Alert/Alert";
 
 export const FormContainer = ( ) => {
 
@@ -24,6 +25,7 @@ export const FormContainer = ( ) => {
   const statusConnectShopifyStore = useSelector( (state: RootState) => state.isConnectShopifyStore);
   const statusConnectEmail = useSelector( (state: RootState) => state.connectEmail);
   const statusIsRegistrationDone = useSelector( (state: RootState) => state.isRegistrationDone);
+  const statusAlert = useSelector( (state: RootState) => state.isAlertActive);
 
   const statusDotUseShopify = useSelector( (state: RootState) => state.doNotUseShopify);
   const statusDotUseGoogle = useSelector( (state: RootState) => state.doNotUseGoogle);
@@ -55,6 +57,11 @@ export const FormContainer = ( ) => {
           <Description color="#4F637D" width="100%">Go live in 10 minutes! Our self-service widget empowers your customers to manage orders and track shipments 24/7 without driving you crazy.</Description>
           <Box id="spacer" sx={{height: "32px", order: "5"}}></Box>
           <FormFields/>
+          {
+            statusAlert
+            &&
+            <Alert boldTitle="required fields" alertType="error">Please fill in all </Alert>
+          }
         </ContainerShared>
         :
         !statusConnectShopify 

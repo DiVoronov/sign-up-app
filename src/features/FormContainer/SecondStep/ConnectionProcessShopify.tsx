@@ -13,10 +13,12 @@ import { useGetShopifyQuery } from "../../../app/api/signUp.api";
 import { setConnectShopify } from "../../../app/Slices/connectShopifySlice";
 import { setDoNotUse } from "../../../app/Slices/doNotUseShopifySlice";
 import { ProgressIndicatorContainerMobile } from "../../ProgressIndicator/ProgressIndicatorContainerMobile";
+import { Alert } from "../../shared/Alert/Alert";
 
 export const ConnectionProcessShopify = () => {
 
   const statusWelcomeCreateAccount = useSelector( (state: RootState) => state.welcomeCreateAccount);
+  const statusAlert = useSelector( (state: RootState) => state.isAlertActive);
 
   const [isRequest, setIsRequest] = useState(false);
 
@@ -73,6 +75,11 @@ export const ConnectionProcessShopify = () => {
             <Description color="#9196A1" width="100%" size="16px">Connecting to Shopify...</Description>
           </Box>
         </Box>
+      }
+      {
+        statusAlert
+        &&
+        <Alert boldTitle="connect the store" alertType="error">Please </Alert>
       }
     </ContainerShared>
   );

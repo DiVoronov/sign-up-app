@@ -38,7 +38,7 @@ export const Input = ( { type, placeholder, value, isEmpty }: IInputProps ) => {
   }, [valueInput]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValueInput(event.target.value);
+    setValueInput(event.target.value.trim());
   };
 
   const isEmptyColor = () => ((!isEmpty && valueInput) || (isEmpty && valueInput) || !isEmpty) ? "none" : "1px solid #D24646"
@@ -64,7 +64,7 @@ export const Input = ( { type, placeholder, value, isEmpty }: IInputProps ) => {
         ?
         <></>
         :
-        <span id="errorMessage">This field cannot be tempty</span>
+        <span id="errorMessage">This field cannot be empty</span>
       }
     </Box>
   );

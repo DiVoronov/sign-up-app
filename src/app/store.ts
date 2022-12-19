@@ -8,6 +8,7 @@ import { doNotUseGoogleReducer } from "./Slices/doNotUseGoogleSlice";
 import { doNotUseShopifyReducer } from "./Slices/doNotUseShopifySlice";
 import { identificationGoogleReducer } from "./Slices/identificationGoogle";
 import { identificationGoogleObjectReducer } from "./Slices/identificationGoogleObject";
+import { isAlertActiveReducer } from "./Slices/isAlertActive";
 import { isCreateAccountDoneReducer } from "./Slices/isCreateAccountDoneSlice";
 import { isLoadingGoogleReducer } from "./Slices/isLoadingGoogle";
 import { isRegistrationDoneReducer } from "./Slices/isRegistrationDoneSlice";
@@ -27,6 +28,7 @@ export const store = configureStore({
     identificationGoogle: identificationGoogleReducer,
     identificationGoogleObject: identificationGoogleObjectReducer,
     isLoadingGoogle: isLoadingGoogleReducer,
+    isAlertActive: isAlertActiveReducer,
     [signUpApi.reducerPath]: signUpApi.reducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(signUpApi.middleware),

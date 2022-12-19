@@ -8,10 +8,12 @@ import { Header } from "../Header/Header";
 import { StyledBottomTitle } from "./BottomTitle.style";
 import { SelectBlock } from "./SelectBlock/SelectBlock";
 import { setDoNotUse } from "../../../app/Slices/doNotUseShopifySlice";
+import { RootState } from "../../../app/store";
 
 import { useSelector, useDispatch } from "react-redux";
 import { setDoNotUseGoogle } from "../../../app/Slices/doNotUseGoogleSlice";
 import { SuccessPage } from "../../FormContainer/SecondStep/SuccessPage"
+import { Alert } from "../Alert/Alert";
 
 export interface IOptionsArray {
   id: number
@@ -30,6 +32,8 @@ interface IDoNotUseProps {
 };
 
 export const DoNotUse = ( { title, description, optionsArray }: IDoNotUseProps ) => {
+
+  const statusAlert = useSelector( (state: RootState) => state.isAlertActive);
 
   const [ other, setOther ] = useState(false);
 
@@ -75,6 +79,11 @@ export const DoNotUse = ( { title, description, optionsArray }: IDoNotUseProps )
           <Box component="span" onClick={handleBackToConnect}><Box component="a">Connect</Box></Box>
         </StyledBottomTitle>
       </Box>
+      {
+        statusAlert
+        &&
+        <Alert boldTitle="select the platform" alertType="error">Please </Alert>
+      }
     </ContainerShared>
   );
 };

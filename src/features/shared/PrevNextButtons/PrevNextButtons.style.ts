@@ -11,6 +11,7 @@ width: 84px;
 height: 33px;
 background: ${ props => props.theme.background };
 border-radius: 4px;
+cursor: pointer;
 
 font-family: 'Inter';
 font-style: normal;
